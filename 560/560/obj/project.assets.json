@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pip95\\OneDrive\\Desktop\\560\\560\\560\\560.csproj",
-      "projectName": "560",
-      "projectPath": "C:\\Users\\pip95\\OneDrive\\Desktop\\560\\560\\560\\560.csproj",
+      "projectUniqueName": "C:\\Users\\pip95\\OneDrive\\Desktop\\560team1\\560\\560\\560Data.csproj",
+      "projectName": "560Data",
+      "projectPath": "C:\\Users\\pip95\\OneDrive\\Desktop\\560team1\\560\\560\\560Data.csproj",
       "packagesPath": "C:\\Users\\pip95\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pip95\\OneDrive\\Desktop\\560\\560\\560\\obj\\",
+      "outputPath": "C:\\Users\\pip95\\OneDrive\\Desktop\\560team1\\560\\560\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
