@@ -1,15 +1,17 @@
----Needs to be sorted out-----
+-----Needs to be worked on
 IF OBJECT_ID(N'Film.Oscars') IS NULL
 BEGIN
 	CREATE	TABLE Film.Oscars
 	(
-		IndividualAwardsWonId int NOT NULL IDENTITY(1,1),
-		MoviePersonId int NOT NUll,
+		OscarsId int NOT NULL IDENTITY(1,1),
+		IndividualAwardsWonId int NOT NUll,
+        MovieAwardsWonId int NOT NUll,
+        [Year] Date not null,
 		CreatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET()),
 		UpdatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET()),
-		CONSTRAINT [PK_Film_IndividualAwardsWon_IndividualAwardsWonId] PRIMARY KEY CLUSTERED
+		CONSTRAINT [PK_Film_Oscars_OscarsId] PRIMARY KEY CLUSTERED
       (
-         IndividualAwardsWonId ASC
+         OscarsId ASC
       ),
 
       CONSTRAINT FK_Film_IndividualAwardsWon_Film_MoviePerson FOREIGN KEY(MoviePersonId)
@@ -17,20 +19,6 @@ BEGIN
 	);
 END; 
 
-IF NOT EXISTS
-   (
-      SELECT *
-      FROM sys.key_constraints kc
-      WHERE kc.parent_object_id = OBJECT_ID(N'Film.IndividualAwardsWon')
-         AND kc.[name] = N'UK_Film_IndividualAwardsWon_MoviePersonId_Category'
-   )
-BEGIN
-   ALTER TABLE Film.IndividualAwardsWon
-   ADD CONSTRAINT [UK_Film_IndividualAwardsWon_MoviePersonId_Category] UNIQUE NONCLUSTERED
-   (
-      MoviePersonId
-   )
-END;
 /****************************
  * Foreign Keys Constraints
  ****************************/
@@ -38,7 +26,7 @@ IF NOT EXISTS
    (
       SELECT *
       FROM sys.foreign_keys fk
-      WHERE fk.parent_object_id = OBJECT_ID(N'Film.IndividualAwardsWon')
+      WHERE fk.parent_object_id = OBJECT_ID(N'Film.Oscars')
          AND fk.referenced_object_id = OBJECT_ID(N'Film.MoviePerson')
          AND fk.[name] = N'FK_Film_IndividualAwardsWon_Film_MoviePerson'
    )

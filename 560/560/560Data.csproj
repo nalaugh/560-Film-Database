@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="SQL\Data\" />
     <Folder Include="SQL\Schemas\" />
-    <Folder Include="SQL\Procedures\" />
   </ItemGroup>
 
 </Project>
