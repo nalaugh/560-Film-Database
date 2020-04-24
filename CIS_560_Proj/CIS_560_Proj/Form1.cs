@@ -23,7 +23,7 @@ namespace CIS_560_Proj
         {
             if (radioButton1.Checked == true)
             {
-                var addmovies = new AddMovie();
+                var addmovies = new Add();
                 panel2.Controls.Add(addmovies);
             }
             if(radioButton2.Checked == true)

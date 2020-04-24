@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace CIS_560_Proj
 {
-    public partial class Add : UserControl
+    public partial class Awards : UserControl
     {
-        public Add()
+        public Awards()
         {
             InitializeComponent();
-            this.listBoxOptoins.Items.Add("Actor");
-            this.listBoxOptoins.Items.Add("Director");
+            this.listBox1.Items.Add("Indiviual Awards");
+            this.listBox1.Items.Add("Movie Awards");
         }
-
-   
     }
 }

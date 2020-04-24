@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace CIS_560_Proj
 {
-    public partial class Add : UserControl
+    public partial class Person : UserControl
     {
-        public Add()
+        public Person()
         {
             InitializeComponent();
-            this.listBoxOptoins.Items.Add("Actor");
-            this.listBoxOptoins.Items.Add("Director");
         }
-
-   
     }
 }
