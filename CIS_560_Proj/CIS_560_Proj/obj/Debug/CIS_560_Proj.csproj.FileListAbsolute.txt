@@ -9,3 +9,17 @@ C:\Users\May\source\repos\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.AddPr
 C:\Users\May\source\repos\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.GenerateResource.cache
 C:\Users\May\source\repos\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.exe
 C:\Users\May\source\repos\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.pdb
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.exe.config
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.exe
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.pdb
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csprojAssemblyReference.cache
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Form1.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Properties.Resources.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.AddProduction.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.GenerateResource.cache
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.CoreCompileInputs.cache
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.exe
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.pdb
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Add.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Awards.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Person.resources

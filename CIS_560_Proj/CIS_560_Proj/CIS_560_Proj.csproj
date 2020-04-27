@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,27 +47,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ColumnNotFoundException.cs" />
+    <Compile Include="DataDelegate.cs" />
+    <Compile Include="DataRowReader.cs" />
+    <Compile Include="IDataDelegate.cs" />
+    <Compile Include="GUI\Movie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Movie.Designer.cs">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IDataReaderDelegate.cs" />
+    <Compile Include="IDataRowReader.cs" />
+    <Compile Include="INonQueryDataDelegate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AddMovie.cs">
+    <Compile Include="GUI\AddProduction.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddMovie.Designer.cs">
-      <DependentUpon>AddMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddProduction.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AddProduction.Designer.cs">
+    <Compile Include="GUI\AddProduction.Designer.cs">
       <DependentUpon>AddProduction.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="GUI\Awards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Awards.Designer.cs">
+      <DependentUpon>Awards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Person.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Person.Designer.cs">
+      <DependentUpon>Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlCommandExecutor.cs" />
+    <EmbeddedResource Include="GUI\Movie.resx">
+      <DependentUpon>Movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,11 +102,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMovie.resx">
-      <DependentUpon>AddMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddProduction.resx">
+    <EmbeddedResource Include="GUI\AddProduction.resx">
       <DependentUpon>AddProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Awards.resx">
+      <DependentUpon>Awards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Person.resx">
+      <DependentUpon>Person.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
