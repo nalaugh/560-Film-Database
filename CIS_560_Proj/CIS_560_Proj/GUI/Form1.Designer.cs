@@ -50,20 +50,19 @@
             this.groupBox1.Controls.Add(this.People);
             this.groupBox1.Controls.Add(this.Production);
             this.groupBox1.Controls.Add(this.Movie);
-            this.groupBox1.Location = new System.Drawing.Point(16, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(24, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(140, 142);
+            this.groupBox1.Size = new System.Drawing.Size(210, 218);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Data";
             // 
             // Awards
             // 
-            this.Awards.Location = new System.Drawing.Point(13, 104);
+            this.Awards.Location = new System.Drawing.Point(48, 161);
+            this.Awards.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Awards.Name = "Awards";
-            this.Awards.Size = new System.Drawing.Size(75, 23);
+            this.Awards.Size = new System.Drawing.Size(112, 35);
             this.Awards.TabIndex = 0;
             this.Awards.Text = "Awards";
             this.Awards.UseVisualStyleBackColor = true;
@@ -71,9 +70,10 @@
             // 
             // People
             // 
-            this.People.Location = new System.Drawing.Point(13, 75);
+            this.People.Location = new System.Drawing.Point(48, 116);
+            this.People.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.People.Name = "People";
-            this.People.Size = new System.Drawing.Size(75, 23);
+            this.People.Size = new System.Drawing.Size(112, 35);
             this.People.TabIndex = 0;
             this.People.Text = "People";
             this.People.UseVisualStyleBackColor = true;
@@ -81,9 +81,10 @@
             // 
             // Production
             // 
-            this.Production.Location = new System.Drawing.Point(13, 46);
+            this.Production.Location = new System.Drawing.Point(48, 71);
+            this.Production.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Production.Name = "Production";
-            this.Production.Size = new System.Drawing.Size(75, 23);
+            this.Production.Size = new System.Drawing.Size(112, 35);
             this.Production.TabIndex = 0;
             this.Production.Text = "Production";
             this.Production.UseVisualStyleBackColor = true;
@@ -91,9 +92,10 @@
             // 
             // Movie
             // 
-            this.Movie.Location = new System.Drawing.Point(13, 17);
+            this.Movie.Location = new System.Drawing.Point(48, 26);
+            this.Movie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Movie.Name = "Movie";
-            this.Movie.Size = new System.Drawing.Size(75, 23);
+            this.Movie.Size = new System.Drawing.Size(112, 35);
             this.Movie.TabIndex = 0;
             this.Movie.Text = "Movie";
             this.Movie.UseVisualStyleBackColor = true;
@@ -101,10 +103,9 @@
             // 
             // Insert
             // 
-            this.Insert.Location = new System.Drawing.Point(25, 37);
-            this.Insert.Margin = new System.Windows.Forms.Padding(2);
+            this.Insert.Location = new System.Drawing.Point(38, 57);
             this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(83, 31);
+            this.Insert.Size = new System.Drawing.Size(124, 48);
             this.Insert.TabIndex = 1;
             this.Insert.Text = "Insert";
             this.Insert.UseVisualStyleBackColor = true;
@@ -112,10 +113,9 @@
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(25, 72);
-            this.Update.Margin = new System.Windows.Forms.Padding(2);
+            this.Update.Location = new System.Drawing.Point(38, 111);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(83, 31);
+            this.Update.Size = new System.Drawing.Size(124, 48);
             this.Update.TabIndex = 2;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -123,10 +123,9 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(25, 107);
-            this.Delete.Margin = new System.Windows.Forms.Padding(2);
+            this.Delete.Location = new System.Drawing.Point(38, 165);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(83, 31);
+            this.Delete.Size = new System.Drawing.Size(124, 48);
             this.Delete.TabIndex = 3;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
@@ -134,10 +133,9 @@
             // 
             // SearchClick
             // 
-            this.SearchClick.Location = new System.Drawing.Point(25, 2);
-            this.SearchClick.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchClick.Location = new System.Drawing.Point(38, 3);
             this.SearchClick.Name = "SearchClick";
-            this.SearchClick.Size = new System.Drawing.Size(83, 31);
+            this.SearchClick.Size = new System.Drawing.Size(124, 48);
             this.SearchClick.TabIndex = 4;
             this.SearchClick.Text = "Search";
             this.SearchClick.UseVisualStyleBackColor = true;
@@ -149,39 +147,38 @@
             this.panel1.Controls.Add(this.Delete);
             this.panel1.Controls.Add(this.Insert);
             this.panel1.Controls.Add(this.Update);
-            this.panel1.Location = new System.Drawing.Point(15, 157);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(22, 242);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(141, 150);
+            this.panel1.Size = new System.Drawing.Size(212, 231);
             this.panel1.TabIndex = 5;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(169, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(254, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(519, 393);
+            this.panel2.Size = new System.Drawing.Size(1336, 669);
             this.panel2.TabIndex = 6;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(16, 313);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(24, 482);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(140, 108);
+            this.listBox1.Size = new System.Drawing.Size(208, 164);
             this.listBox1.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(718, 460);
+            this.ClientSize = new System.Drawing.Size(1621, 739);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "|";
             this.groupBox1.ResumeLayout(false);

@@ -18,8 +18,7 @@ namespace CIS_560_Proj
             InitializeComponent();
         }
 
-        public string conString = "Data Source=mssql.cs.ksu.edu;Initial Catalog = phyo; User ID = phyo; Password=***********";
-      
+        
 
         private void Insert_Click(object sender, EventArgs e)
         {

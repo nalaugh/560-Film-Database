@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CIS_560_Proj
 {
     
     public partial class Form1 : Form
     {
+
+        SqlConnection connection = new SqlConnection(@"Data Source=mssql.cs.ksu.edu;Initial Catalog=phyo;User ID=phyo;Password=***********");
 
         public static List<string> items = new List<string>();
         public Form1()
@@ -22,12 +25,19 @@ namespace CIS_560_Proj
             this.listBox1.Items.AddRange(items.ToArray());
         }
 
-      
+
 
         private void Insert_Click(object sender, EventArgs e)
-        {   
-           
-     
+        {
+
+            connection.Open();
+            //2 things for movie table
+            //Plus add person name 
+            //Plus add person's role 
+            
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text; 
+
         }
         public void Updatelist(object sender, EventArgs e)
         {
