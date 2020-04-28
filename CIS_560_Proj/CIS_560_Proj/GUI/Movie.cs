@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
+﻿using CIS_560_Proj.Interface;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CIS_560_Proj
 {
     public partial class Add : UserControl
     {
+        private IProductionHouse repo;
+        private IMovie movierepo;
+
         public Add()
         {
             InitializeComponent();
@@ -21,24 +18,58 @@ namespace CIS_560_Proj
             this.listBoxOptoins.Items.Add("Director");
             this.uxButtonInsertMovie.Enabled = true;
         }
-        public string conStr = "Server=mssql.cs.ksu.edu;Initial Catalog=phyo;Persist Security Info=True;User ID=phyo;Password=***********";
 
         private void uxButtonInsertMovie_Click(object sender, EventArgs e)
         {
+            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
+              "Initial Catalog=phyo;" +
+              "User id=phyo;" +
+              "Password=zinrocks@4321;");
+            var production = repo.GetProductionHouse(this.uxProductionName.Text);
+
+            int pID = Convert.ToInt32(production.ProductionId.ToString());
+            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
+              "Initial Catalog=phyo;" +
+              "User id=phyo;" +
+              "Password=zinrocks@4321;");
+            movierepo.CreateMovie(pID.ToString(), uxTextBoxMovieTitle.Text, dateTimePicker1.Value.Date.ToString());
+
+
+            
+
+        }
+
+
+        /// <summary>
+        /// Uses GetProductionHouse Procedure to retrieve ProductionID 
+        /// </summary>
+        /// <returns></returns>
+        public int GetProudctionId()
+        {
+
+
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString =
-              "Data Source=mssql.cs.ksu.edu;" +
+            "Data Source=mssql.cs.ksu.edu;" +
               "Initial Catalog=phyo;" +
               "User id=phyo;" +
               "Password=zinrocks@4321;";
             connection.Open();
-            SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText ="Insert into Film.Movie values('" + uxTextBoxMovieTitle + "', '" + dateTimePicker1.Value.Date + "')";
+
+            SqlCommand cmd = new SqlCommand("GetProductionHouseName", connection);
+            cmd.Parameters.AddWithValue("ProductionName", uxProductionName.Text);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("The movie has been added to the database.");
-            display_data();
-            connection.Close();
+
+            SqlParameter output = new SqlParameter();
+            output.ParameterName = "@P.ProductionId";
+            output.SqlDbType = SqlDbType.Int;
+            output.Direction = System.Data.ParameterDirection.Output;
+
+            int i = Convert.ToInt32(output.Value.ToString());
+            return i;
+
+
+
 
         }
 
@@ -47,7 +78,12 @@ namespace CIS_560_Proj
         /// </summary>
         public void display_data()
         {
-            SqlConnection connection = new SqlConnection(conStr);
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString =
+              "Data Source=mssql.cs.ksu.edu;" +
+              "Initial Catalog=phyo;" +
+              "User id=phyo;" +
+              "Password=zinrocks@4321;";
 
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
@@ -62,7 +98,7 @@ namespace CIS_560_Proj
         }
         private void uxViewMovies_Click(object sender, EventArgs e)
         {
-            display_data(); 
+            display_data();
         }
     }
 }

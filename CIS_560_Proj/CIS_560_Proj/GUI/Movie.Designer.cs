@@ -41,6 +41,8 @@
             this.uxDeleteMovie = new System.Windows.Forms.Button();
             this.uxViewMovies = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.uxProductionName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.uxLabelReleaseDate.BackColor = System.Drawing.Color.White;
             this.uxLabelReleaseDate.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.uxLabelReleaseDate.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelReleaseDate.Location = new System.Drawing.Point(35, 225);
+            this.uxLabelReleaseDate.Location = new System.Drawing.Point(35, 217);
             this.uxLabelReleaseDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelReleaseDate.Name = "uxLabelReleaseDate";
             this.uxLabelReleaseDate.Size = new System.Drawing.Size(322, 45);
@@ -116,7 +118,7 @@
             // 
             this.Persontext.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Persontext.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.Persontext.Location = new System.Drawing.Point(283, 308);
+            this.Persontext.Location = new System.Drawing.Point(286, 358);
             this.Persontext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Persontext.Multiline = true;
             this.Persontext.Name = "Persontext";
@@ -130,18 +132,18 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 306);
+            this.label1.Location = new System.Drawing.Point(35, 358);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 45);
+            this.label1.Size = new System.Drawing.Size(250, 45);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Actor/Director";
+            this.label1.Text = "Actor/Director:";
             // 
             // listBoxOptoins
             // 
             this.listBoxOptoins.FormattingEnabled = true;
             this.listBoxOptoins.ItemHeight = 20;
-            this.listBoxOptoins.Location = new System.Drawing.Point(515, 296);
+            this.listBoxOptoins.Location = new System.Drawing.Point(515, 360);
             this.listBoxOptoins.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBoxOptoins.Name = "listBoxOptoins";
             this.listBoxOptoins.Size = new System.Drawing.Size(128, 64);
@@ -149,7 +151,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(365, 240);
+            this.dateTimePicker1.Location = new System.Drawing.Point(354, 232);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
@@ -198,12 +200,37 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(724, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(696, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 582);
+            this.dataGridView1.Size = new System.Drawing.Size(626, 589);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(37, 286);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(293, 45);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Production Name:";
+            // 
+            // uxProductionName
+            // 
+            this.uxProductionName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uxProductionName.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.uxProductionName.Location = new System.Drawing.Point(325, 288);
+            this.uxProductionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxProductionName.Multiline = true;
+            this.uxProductionName.Name = "uxProductionName";
+            this.uxProductionName.Size = new System.Drawing.Size(348, 47);
+            this.uxProductionName.TabIndex = 28;
             // 
             // Add
             // 
@@ -211,6 +238,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.uxProductionName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uxViewMovies);
             this.Controls.Add(this.uxDeleteMovie);
@@ -247,5 +276,7 @@
         private System.Windows.Forms.Button uxDeleteMovie;
         private System.Windows.Forms.Button uxViewMovies;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox uxProductionName;
     }
 }

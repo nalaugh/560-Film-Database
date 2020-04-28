@@ -156,7 +156,7 @@
             // 
             this.panel2.Location = new System.Drawing.Point(254, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1336, 669);
+            this.panel2.Size = new System.Drawing.Size(1469, 669);
             this.panel2.TabIndex = 6;
             // 
             // listBox1
@@ -173,12 +173,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1621, 739);
+            this.ClientSize = new System.Drawing.Size(1763, 753);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "|";
             this.groupBox1.ResumeLayout(false);

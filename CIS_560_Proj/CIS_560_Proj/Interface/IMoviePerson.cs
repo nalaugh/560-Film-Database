@@ -1,9 +1,8 @@
-﻿using _560.Models;
-using System;
+﻿using CIS_560_Proj.Items;
 using System.Collections.Generic;
-using System.Text;
 
-namespace _5601
+
+namespace CIS_560_Proj.Interface
 {
     public interface IMoviePerson
     {
@@ -34,7 +33,7 @@ namespace _5601
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        MoviePerson CreateMoviePerson(string PersonId, string MovieId, string Role);
+        MoviePerson CreateMoviePerson(int PersonId, int MovieId, string Role);
 
 
     }

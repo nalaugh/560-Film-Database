@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _560.Models
+﻿namespace CIS_560_Proj.Items
 {
     public class MoviePerson
     {
@@ -21,5 +17,4 @@ namespace _560.Models
         }
 
     }
-
 }

@@ -1,9 +1,7 @@
-﻿using _560.Models;
-using System;
+﻿using CIS_560_Proj.Items;
 using System.Collections.Generic;
-using System.Text;
 
-namespace _5601
+namespace CIS_560_Proj.Interface
 {
     public interface IMovieAwardsWon
     {
@@ -34,7 +32,7 @@ namespace _5601
         /// if one exists with with the provided <paramref name="email"/>.
         /// If one is not found, <c>null</c> is returned.
         /// </returns>
-        MovieAwardsWon GetMovieWardsWon(string name);
+        MovieAwardsWon GetMovieAwardsWon(string name);
         /// <summary>
         /// Creates a new person in the repository.
         /// </summary>
@@ -44,7 +42,7 @@ namespace _5601
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        MovieAwardsWon CreatePerson(string MovieId, string Category);
+        MovieAwardsWon CreateMovieAwardsWon(int MovieId, string Category);
 
 
     }

@@ -50,8 +50,65 @@
   <ItemGroup>
     <Compile Include="ColumnNotFoundException.cs" />
     <Compile Include="DataDelegate.cs" />
+    <Compile Include="DataReaderDelegate.cs" />
     <Compile Include="DataRowReader.cs" />
+    <Compile Include="GUI\People.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\People.Designer.cs">
+      <DependentUpon>People.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDataDelegate.cs" />
+    <Compile Include="IDataReaderDelegate.cs" />
+    <Compile Include="IDataRowReader.cs" />
+    <Compile Include="IndividualAwardsWon Delegate\CreateDelegate.cs" />
+    <Compile Include="IndividualAwardsWon Delegate\FetchDelegate.cs" />
+    <Compile Include="IndividualAwardsWon Delegate\GetDelegate.cs" />
+    <Compile Include="IndividualAwardsWon Delegate\RetrieveDelegat.cs" />
+    <Compile Include="INonQueryDataDelegate.cs" />
+    <Compile Include="Interface\IIndividualAwardsWon.cs" />
+    <Compile Include="Interface\IMovie.cs" />
+    <Compile Include="Interface\IMovieAwardsWon.cs" />
+    <Compile Include="Interface\IMoviePerson.cs" />
+    <Compile Include="Interface\IOscars.cs" />
+    <Compile Include="Interface\IPerson.cs" />
+    <Compile Include="Items\IndividualAwardsWon.cs" />
+    <Compile Include="Items\Movie.cs" />
+    <Compile Include="Items\MovieAwardsWon.cs" />
+    <Compile Include="Items\MoviePerson.cs" />
+    <Compile Include="Items\Oscars.cs" />
+    <Compile Include="Items\Person.cs" />
+    <Compile Include="Items\Sales.cs" />
+    <Compile Include="Movie Delegates\CreateDelegate.cs" />
+    <Compile Include="Movie Delegates\FetchDelegate.cs" />
+    <Compile Include="Movie Delegates\GetDelegate.cs" />
+    <Compile Include="Movie Delegates\RetrieveDelegate.cs" />
+    <Compile Include="MoviePersons\CreateDelegate.cs" />
+    <Compile Include="MoviePersons\FetchDelegate.cs" />
+    <Compile Include="MoviePersons\GetDelegate.cs" />
+    <Compile Include="MoviePersons\RetrieveDelegate.cs" />
+    <Compile Include="MoviesAwardsWon Delegate\CreateDelegate.cs" />
+    <Compile Include="MoviesAwardsWon Delegate\FetchDelegate.cs" />
+    <Compile Include="MoviesAwardsWon Delegate\GetDelegate.cs" />
+    <Compile Include="MoviesAwardsWon Delegate\RetrieveDelegate.cs" />
+    <Compile Include="NonQueryDataDelegate.cs" />
+    <Compile Include="Oscars Delegates\CreateDelegate.cs" />
+    <Compile Include="Oscars Delegates\FetchDelegate.cs" />
+    <Compile Include="Oscars Delegates\GetDelegate.cs" />
+    <Compile Include="Oscars Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Person Delegates\CreateDelegate.cs" />
+    <Compile Include="Person Delegates\FetchDelegate.cs" />
+    <Compile Include="Person Delegates\GetDelegate.cs" />
+    <Compile Include="Person Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Production Delegates\GetDelegate.cs" />
+    <Compile Include="Production Delegates\CreateDelegate.cs" />
+    <Compile Include="Production Delegates\FetchDelegate.cs" />
+    <Compile Include="GUI\AddProduction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AddProduction.Designer.cs">
+      <DependentUpon>AddProduction.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Movie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,52 +121,43 @@
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDataReaderDelegate.cs" />
-    <Compile Include="IDataRowReader.cs" />
-    <Compile Include="INonQueryDataDelegate.cs" />
-    <Compile Include="Interface\IIndividualAwardsWon.cs" />
-    <Compile Include="Interface\IMovie.cs" />
-    <Compile Include="Interface\IMovieAwardsWon.cs" />
-    <Compile Include="Interface\IMoviePerson.cs" />
-    <Compile Include="Interface\IOscars.cs" />
-    <Compile Include="Interface\IPerson.cs" />
     <Compile Include="Interface\IProductionHouse.cs" />
-    <Compile Include="Interface\ISales.cs" />
-    <Compile Include="Items\IndividualAwardsWon.cs" />
-    <Compile Include="Items\Movie.cs" />
-    <Compile Include="Items\MovieAwardsWon.cs" />
-    <Compile Include="Items\MoviePerson.cs" />
-    <Compile Include="Items\Oscars.cs" />
-    <Compile Include="Items\Person.cs" />
+    <Compile Include="Interface\Isales.cs" />
     <Compile Include="Items\ProductionHouse.cs" />
-    <Compile Include="Items\Program.cs" />
-    <Compile Include="Items\Sales.cs" />
+    <Compile Include="Production Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Production Delegates\UpdateDelegate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\AddProduction.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\AddProduction.Designer.cs">
-      <DependentUpon>AddProduction.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Awards.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Awards.Designer.cs">
       <DependentUpon>Awards.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Person.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Person.Designer.cs">
-      <DependentUpon>Person.cs</DependentUpon>
-    </Compile>
-    <Compile Include="sqlCommandExecutor.cs" />
+    <Compile Include="RecordNotFoundException.cs" />
+    <Compile Include="Sales Delegates\CreateDelegate.cs" />
+    <Compile Include="Sales Delegates\FetchDelegate.cs" />
+    <Compile Include="Sales Delegates\RetrieveDelegate.cs" />
+    <Compile Include="SqlCommandExecutor.cs" />
+    <Compile Include="SqlIndividualAwardsWonRepository.cs" />
+    <Compile Include="SqlMovieAwardsWonRepository.cs" />
+    <Compile Include="SqlMoviePersonsRepository.cs" />
+    <Compile Include="SqlMovieRepository.cs" />
+    <Compile Include="SqlOscarsRepository.cs" />
+    <Compile Include="SqlPersonRepository.cs" />
+    <Compile Include="SqlProductionRepository.cs" />
+    <Compile Include="SqlSalesRepository.cs" />
+    <EmbeddedResource Include="GUI\AddProduction.resx">
+      <DependentUpon>AddProduction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Movie.resx">
       <DependentUpon>Movie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\People.resx">
+      <DependentUpon>People.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,14 +168,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\AddProduction.resx">
-      <DependentUpon>AddProduction.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Awards.resx">
       <DependentUpon>Awards.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Person.resx">
-      <DependentUpon>Person.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,8 +184,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="NewFile1.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

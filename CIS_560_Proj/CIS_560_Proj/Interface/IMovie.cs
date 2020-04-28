@@ -1,9 +1,7 @@
-﻿using _560.Models;
-using System;
+﻿using CIS_560_Proj.Items;
 using System.Collections.Generic;
-using System.Text;
 
-namespace _5601
+namespace CIS_560_Proj.Interface
 {
     public interface IMovie
     {
@@ -24,7 +22,7 @@ namespace _5601
         /// <exception cref="DataAccess.RecordNotFoundException">
         /// Thrown if <paramref name="productionhouseId"/> does not exist.
         /// </exception>
-        Movie FetchPerson(int MovieId);
+        Movie FetchMovie(int MovieId);
         /// <summary>
         /// Gets the person with the given <paramref name="productionhouseId"/> if it exists.
         /// </summary>
@@ -34,7 +32,7 @@ namespace _5601
         /// if one exists with with the provided <paramref name="email"/>.
         /// If one is not found, <c>null</c> is returned.
         /// </returns>
-        Movie GetPerson(string name);
+        Movie GetMovie(string name);
         /// <summary>
         /// Creates a new person in the repository.
         /// </summary>
@@ -44,8 +42,11 @@ namespace _5601
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        Movie CreatePerson(string ProductionId, string MovieName, string ReleaseDate);
+        Movie CreateMovie(string ProductionId, string MovieName, string ReleaseDate);
 
+
+        Movie DeleateMovie(int name);
+        IReadOnlyList<Movie> RetrieveMovieDealeated();
 
     }
 }

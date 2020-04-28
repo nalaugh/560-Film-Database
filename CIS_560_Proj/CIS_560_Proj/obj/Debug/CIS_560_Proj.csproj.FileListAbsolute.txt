@@ -37,3 +37,17 @@ C:\Users\May\source\repos\560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.c
 C:\Users\May\source\repos\560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.CoreCompileInputs.cache
 C:\Users\May\source\repos\560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.exe
 C:\Users\May\source\repos\560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.pdb
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.GUI.AddProduction.resources
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Add.resources
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Form1.resources
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Properties.Resources.resources
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.Awards.resources
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.GenerateResource.cache
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csproj.CoreCompileInputs.cache
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.csprojAssemblyReference.cache
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.exe.config
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.exe
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.pdb
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.exe
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.pdb
+C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.GUI.People.resources

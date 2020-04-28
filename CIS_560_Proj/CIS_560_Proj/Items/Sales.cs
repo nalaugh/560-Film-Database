@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _560.Models
+﻿namespace CIS_560_Proj.Items
 {
     public class Sales
     {
@@ -10,7 +6,7 @@ namespace _560.Models
         public int DomesticSales { get; }
         public int ForeignSales { get; }
 
-        public Sales(int movieId, int domesticsales,int foreignsales)
+        public Sales(int movieId, int domesticsales, int foreignsales)
         {
             this.MovieId = movieId;
             this.DomesticSales = domesticsales;

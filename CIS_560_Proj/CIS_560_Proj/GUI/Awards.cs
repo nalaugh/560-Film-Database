@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CIS_560_Proj.Interface;
+using CIS_560_Proj;
 
 namespace CIS_560_Proj
 {
     public partial class Awards : UserControl
     {
+        private IIndividualAwardsWon Inrepo;
+        private IMovieAwardsWon movie;
+        private IOscars oscarsrepo;
+        private IMoviePerson personrepo;
+        private IPerson person;
         public Awards()
         {
             InitializeComponent();
             this.listBox1.Items.Add("Indiviual Awards");
             this.listBox1.Items.Add("Movie Awards");
-            this.uxButtonAddMovie.Enabled = true;
+            this.uxButtonInsertMovie.Enabled = true;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,7 +42,28 @@ namespace CIS_560_Proj
 
         private void uxButtonAddMovie_Click(object sender, EventArgs e)
         {
-            if(this.listBox1.SelectedItem!= null&&!Form1.items.Contains(this.listBox1.SelectedItem.ToString()))
+             Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+               "Initial Catalog=phyo;" +
+             "User id=phyo;" +
+            "Password=zinrocks@4321;");
+
+            person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+               "Initial Catalog=phyo;" +
+             "User id=phyo;" +
+            "Password=zinrocks@4321;");
+            //person.GetPerson()
+
+            personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
+               "Initial Catalog=phyo;" +
+             "User id=phyo;" +
+            "Password=zinrocks@4321;");
+
+            personrepo.RetrieveMoviePerson();
+
+
+
+
+            if (this.listBox1.SelectedItem != null && !Form1.items.Contains(this.listBox1.SelectedItem.ToString()))
             {
                 Form1.items.Add(this.listBox1.SelectedItem.ToString());
             }

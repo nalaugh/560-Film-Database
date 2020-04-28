@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace CIS_560_Proj
 {
+
     public abstract class DataDelegate : IDataDelegate
     {
         public string ProcedureName { get; }
@@ -25,4 +22,6 @@ namespace CIS_560_Proj
             command.CommandType = CommandType.StoredProcedure;
         }
     }
+
+
 }

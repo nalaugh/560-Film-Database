@@ -1,17 +1,13 @@
-﻿using System;
+﻿using CIS_560_Proj.GUI;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CIS_560_Proj
 {
-    
+
     public partial class Form1 : Form
     {
 
@@ -34,9 +30,9 @@ namespace CIS_560_Proj
             //2 things for movie table
             //Plus add person name 
             //Plus add person's role 
-            
+
             SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text; 
+            cmd.CommandType = CommandType.Text;
 
         }
         public void Updatelist(object sender, EventArgs e)
@@ -69,7 +65,7 @@ namespace CIS_560_Proj
         private void People_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            var addperson = new Person();
+            var addperson = new People();
             panel2.Controls.Add(addperson);
             addperson.HandleDestroyed += new EventHandler(Updatelist);
         }

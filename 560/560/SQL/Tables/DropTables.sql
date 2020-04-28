@@ -1,8 +1,0 @@
-DROP TABLE IF EXISTS Film.Oscars;
-DROP TABLE IF EXISTS Film.IndividualAwardsWon;
-DROP TABLE IF EXISTS Film.MovieAwardsWon;
-DROP TABLE IF EXISTS Film.Person;
-DROP TABLE IF EXISTS Film.MoviePerson;
-DROP TABLE IF EXISTS Film.ProductionHouse;
-DROP TABLE IF EXISTS Film.Sales;
-DROP TABLE IF EXISTS Film.Movie;

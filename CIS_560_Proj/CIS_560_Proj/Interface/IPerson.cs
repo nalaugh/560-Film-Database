@@ -1,9 +1,7 @@
-﻿using _560.Models;
-using System;
+﻿using CIS_560_Proj.Items;
 using System.Collections.Generic;
-using System.Text;
 
-namespace _5601
+namespace CIS_560_Proj.Interface
 {
     public interface IPerson
     {
@@ -14,6 +12,7 @@ namespace _5601
         /// <see cref="IReadOnlyList{Person}"/> containing all persons.
         /// </returns>
         IReadOnlyList<Person> RetrievePersons();
+        IReadOnlyList<Person> RetrievePersonsName(string name);
         /// <summary>
         /// Fetches the person with the given <paramref name="personId"/> if it exists.
         /// </summary>
@@ -44,6 +43,10 @@ namespace _5601
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        Person CreatePerson(string Name, string DOB, string DeathDate);
+        Person CeatePerson(string Name, string DOB, string DeathDate);
+
+        Person DeleatePerson(int name);
+        IReadOnlyList<Person> RetrievePersonDealeated();
+
     }
 }

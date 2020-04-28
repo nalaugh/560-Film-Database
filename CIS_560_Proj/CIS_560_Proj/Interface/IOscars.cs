@@ -1,9 +1,7 @@
-﻿using _560.Models;
-using System;
+﻿using CIS_560_Proj.Items;
 using System.Collections.Generic;
-using System.Text;
 
-namespace _5601
+namespace CIS_560_Proj.Interface
 {
     public interface IOscars
     {
@@ -13,7 +11,7 @@ namespace _5601
         /// <returns>
         /// <see cref="IReadOnlyList{Oscars}"/> containing all persons.
         /// </returns>
-        IReadOnlyList<Oscars> RetrieveIndividualAwardsWon();
+        IReadOnlyList<Oscars> RetrieveOscars();
         /// <summary>
         /// Fetches the person with the given <paramref name="productionhouseId"/> if it exists.
         /// </summary>
@@ -34,7 +32,7 @@ namespace _5601
         /// if one exists with with the provided <paramref name="email"/>.
         /// If one is not found, <c>null</c> is returned.
         /// </returns>
-        Oscars GetOscars(string name);
+        Oscars GetOscars(int name);
         /// <summary>
         /// Creates a new person in the repository.
         /// </summary>
@@ -44,7 +42,10 @@ namespace _5601
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        Oscars CreateIndividualAwardsWon(string IndividualAwardsWonId, string MovieAwardsWonId, string Year);
+        Oscars CreateOscars(int IndividualAwardsWonId, int MovieAwardsWonId, int Year);
+
+        Oscars DeleateOscars(int name);
+        IReadOnlyList<Oscars> RetrieveOscarsDealeated();
 
     }
 }
