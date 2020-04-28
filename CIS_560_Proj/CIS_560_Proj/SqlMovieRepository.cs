@@ -31,6 +31,12 @@ namespace CIS_560_Proj
             return executor.ExecuteNonQuery(d);
         }
 
+        public Movie DeleateMovie(int id,string pid, string name, string release)
+        {
+            var d = new DeleateDelegate(id, pid, name, release);
+            return executor.ExecuteNonQuery(d);
+        }
+
         public Movie FetchMovie(int productionId)
         {
             var d = new FetchDelegate(productionId);
@@ -46,6 +52,16 @@ namespace CIS_560_Proj
         public IReadOnlyList<Movie> RetrieveMovie()
         {
             return executor.ExecuteReader(new RetrieveDelegate());
+        }
+
+        public IReadOnlyList<Movie> RetrieveMovieDealeated()
+        {
+            return executor.ExecuteReader(new RetrieveDelegate());
+        }
+        public Movie UpdateMovie(int Movie, string ProductionId, string MovieName, string ReleaseDate)
+        {
+            var d = new UpdateDelegate( Movie, ProductionId, MovieName,  ReleaseDate);
+            return executor.ExecuteNonQuery(d);
         }
     }
 }

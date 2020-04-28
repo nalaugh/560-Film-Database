@@ -44,8 +44,9 @@ namespace CIS_560_Proj.Interface
         /// </returns>
         Oscars CreateOscars(int IndividualAwardsWonId, int MovieAwardsWonId, int Year);
 
-        Oscars DeleateOscars(int name);
+        Oscars DeleateOscars(int id, int IId, int mid, int year);
         IReadOnlyList<Oscars> RetrieveOscarsDealeated();
+        Oscars UpdateDelegate(int OID, int IndividualAwardsWonId, int MovieAwardsWonId, int Year);
 
     }
 }

@@ -54,4 +54,43 @@ namespace CIS_560_Proj.Production_Delegates
                reader.GetString("Location"));
         }
     }
+
+    internal class DeleateDelegate : DataReaderDelegate<ProductionHouse>
+    {
+        public readonly string Name;
+        public readonly string location;
+        public readonly int pId;
+
+
+        public DeleateDelegate(string Name, string location, int pId)
+           : base("DeleateProductionHouse")
+        {
+            this.Name = Name;
+            this.location = location;
+            this.pId = pId;
+        }
+
+
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+
+           var  p = command.Parameters.Add("ProductionId", SqlDbType.Int);
+            p.Value = pId;
+        }
+
+
+
+
+        public override ProductionHouse Translate(SqlCommand command, IDataRowReader reader)///may need to overide
+        {
+            if (!reader.Read())
+                throw new RecordNotFoundException(pId.ToString());
+
+            return new ProductionHouse(pId,
+               reader.GetString("ProductionName"),
+               reader.GetString("Location"), "Deleated");
+        }
+    }
 }

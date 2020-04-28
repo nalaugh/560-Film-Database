@@ -51,3 +51,5 @@ C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\bin\Debug\CIS_560_Proj.pd
 C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.exe
 C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.pdb
 C:\Users\May\Desktop\CIS-560\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.GUI.People.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.GUI.AddProduction.resources
+C:\Users\pip95\OneDrive\Desktop\560team1\CIS_560_Proj\CIS_560_Proj\obj\Debug\CIS_560_Proj.GUI.People.resources

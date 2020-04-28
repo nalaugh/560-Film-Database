@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using CIS_560_Proj.Interface;
 using CIS_560_Proj;
+using System.Collections.Generic;
 
 namespace CIS_560_Proj
 {
@@ -72,6 +73,47 @@ namespace CIS_560_Proj
                 Form1.items.Add(this.listBox2.SelectedItem.ToString());
             }
             this.Dispose();
+        }
+
+        private void Deleate_Click(object sender, EventArgs e)
+        {
+            oscarsrepo = new SqlOscarsRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            var id = oscarsrepo.GetOscars(Convert.ToInt32(uxNumericUpDownYear.Value));
+            var createdPH = oscarsrepo.DeleateOscars(id.OscarsId, id.IndividualAwardsWonId, id.MovieAwardsWonId, id.Year);
+            dataGridView1.DataSource = oscarsrepo.RetrieveOscarsDealeated();
+        }
+
+
+        private void uxSearchProduction_Click(object sender, EventArgs e)
+        {
+            oscarsrepo = new SqlOscarsRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            movie = new SqlMovieAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+
+            var id = oscarsrepo.GetOscars(Convert.ToInt32(uxNumericUpDownYear.Value));
+            List<object> list = new List<object>();
+            foreach(object i in Inrepo.RetrieveIndividualAwardsWon())
+            {
+                list.Add(i);
+            }
+            foreach (object i in movie.RetrieveMovieAwardsWon())
+            {
+                list.Add(i);
+            }
+
+            dataGridView1.DataSource = list;
         }
     }
 }

@@ -22,7 +22,31 @@ namespace CIS_560_Proj.Movie_Delegates
                 Movie.Add(new Movie(Convert.ToInt32(reader.GetInt32("MovieId")),
                reader.GetInt32("ProductionId"),
                 reader.GetString("MovieName"),
-                Convert.ToDateTime(reader.GetString("ReleasDate"))));
+               reader.GetString("ReleasDate")));
+            }
+
+            return Movie;
+        }
+    }
+    internal class RetrieveDelegateDeleated : DataReaderDelegate<IReadOnlyList<Movie>>
+    {
+        public RetrieveDelegateDeleated()
+          : base("Film.RetrieveMovieDeleated")
+        {
+        }
+
+        public override IReadOnlyList<Movie> Translate(SqlCommand command, IDataRowReader reader)
+        {
+            var Movie = new List<Movie>();
+
+            while (reader.Read())
+            {
+
+                Movie.Add(new Movie(Convert.ToInt32(reader.GetInt32("MovieId")),
+               reader.GetInt32("ProductionId"),
+                reader.GetString("MovieName"),
+               reader.GetString("ReleasDate"),
+               reader.GetString("IsDeleated")));
             }
 
             return Movie;

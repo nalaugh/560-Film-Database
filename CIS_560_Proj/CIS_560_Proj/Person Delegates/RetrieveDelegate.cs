@@ -65,21 +65,16 @@ namespace CIS_560_Proj.Person_Delegates
 
             return person;
         }
+    }
         internal class RetrieveDelegateDeleated : DataReaderDelegate<IReadOnlyList<Person>>
         {
 
-          
 
-            public RetrieveDelegateDeleated(string names)
-               : base("RetrieveProductionByName")
+
+            public RetrieveDelegateDeleated()
+               : base("RetrieveProductionDeleated")
             {
-                this.name = names;
-            }
-            public override void PrepareCommand(SqlCommand command)
-            {
-                base.PrepareCommand(command);
-                var p = command.Parameters.Add("Name", SqlDbType.NVarChar);
-                p.Value = name;
+
             }
             public override IReadOnlyList<Person> Translate(SqlCommand command, IDataRowReader reader)
             {
@@ -87,14 +82,19 @@ namespace CIS_560_Proj.Person_Delegates
 
                 while (reader.Read())
                 {
+
                     person.Add(new Person(reader.GetInt32("PersonId"),
                    reader.GetString("Name"),
-                   reader.GetString("DOB"), "NULL"
+                   reader.GetString("DOB"), "NULL",
                    //,reader.GetString("DeathDate")
-                   )); ;
+                   reader.GetString("IsDeleated")
+                   )
+                        ); ;
+
                 }
 
                 return person;
             }
         }
+    
 }

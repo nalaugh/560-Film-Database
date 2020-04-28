@@ -44,8 +44,8 @@ namespace CIS_560_Proj.Interface
         /// </returns>
         Movie CreateMovie(string ProductionId, string MovieName, string ReleaseDate);
 
-
-        Movie DeleateMovie(int name);
+        Movie UpdateMovie(int Movie, string ProductionId, string MovieName, string ReleaseDate);
+        Movie DeleateMovie(int id, string pid, string name, string release);
         IReadOnlyList<Movie> RetrieveMovieDealeated();
 
     }

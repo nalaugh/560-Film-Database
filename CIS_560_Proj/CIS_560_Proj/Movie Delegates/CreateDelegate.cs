@@ -38,7 +38,7 @@ namespace CIS_560_Proj.Movie_Delegates
 
         public override Movie Translate(SqlCommand command)
         {
-            return new Movie((int)command.Parameters["MovieId"].Value, Convert.ToInt32(ProductionId), MovieName, Convert.ToDateTime(ReleaseDate));
+            return new Movie((int)command.Parameters["MovieId"].Value, Convert.ToInt32(ProductionId), MovieName, ReleaseDate);
         }
     }
 }

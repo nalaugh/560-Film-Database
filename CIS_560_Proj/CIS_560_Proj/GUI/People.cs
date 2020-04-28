@@ -57,5 +57,18 @@ namespace CIS_560_Proj.GUI
             //Retrieve person by name 
             dataGridView1.DataSource = repo.RetrievePersonsName(name);
         }
+
+        private void Deleate_Click(object sender, EventArgs e)
+        {
+            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+
+            var id = repo.GetPerson(uxPersonName.ToString());
+            var createdPH = repo.DeleatePerson(id.PersonId, id.Name, id.DOB, id.DeathDate);
+
+            dataGridView1.DataSource = repo.RetrievePersonDealeated();
+        }
     }
 }

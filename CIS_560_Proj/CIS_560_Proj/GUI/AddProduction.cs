@@ -88,5 +88,16 @@ namespace CIS_560_Proj.GUI
                 uxDeleteProduction.Enabled = true;
             }
         }
+
+        private void uxDeleteProduction_Click(object sender, EventArgs e)
+        {
+            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            var id = repo.GetProductionHouse(uxProductionName.Text);
+            var createdPH = repo.DeleateProductionHouse(uxProductionName.Text, uxProductionLocation.Text, id.ProductionId);
+            dataGridView1.DataSource = repo.RetrieveProductionHouseDealeated();
+        }
     }
 }

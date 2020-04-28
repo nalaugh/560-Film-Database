@@ -39,6 +39,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.uxViewButton = new System.Windows.Forms.Button();
             this.uxSearchBox = new System.Windows.Forms.TextBox();
+            this.Deleate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +51,8 @@
             this.uxLabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
             this.uxLabelTitle.ForeColor = System.Drawing.Color.White;
             this.uxLabelTitle.Location = new System.Drawing.Point(0, 0);
-            this.uxLabelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelTitle.Name = "uxLabelTitle";
-            this.uxLabelTitle.Size = new System.Drawing.Size(1276, 77);
+            this.uxLabelTitle.Size = new System.Drawing.Size(851, 50);
             this.uxLabelTitle.TabIndex = 10;
             this.uxLabelTitle.Text = "Person";
             this.uxLabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -61,11 +61,10 @@
             // 
             this.uxPersonName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxPersonName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxPersonName.Location = new System.Drawing.Point(172, 142);
-            this.uxPersonName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxPersonName.Location = new System.Drawing.Point(115, 92);
             this.uxPersonName.Multiline = true;
             this.uxPersonName.Name = "uxPersonName";
-            this.uxPersonName.Size = new System.Drawing.Size(379, 45);
+            this.uxPersonName.Size = new System.Drawing.Size(254, 31);
             this.uxPersonName.TabIndex = 11;
             // 
             // uxLabelMovieTitle
@@ -75,10 +74,9 @@
             this.uxLabelMovieTitle.BackColor = System.Drawing.Color.White;
             this.uxLabelMovieTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.uxLabelMovieTitle.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelMovieTitle.Location = new System.Drawing.Point(38, 140);
-            this.uxLabelMovieTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.uxLabelMovieTitle.Location = new System.Drawing.Point(25, 91);
             this.uxLabelMovieTitle.Name = "uxLabelMovieTitle";
-            this.uxLabelMovieTitle.Size = new System.Drawing.Size(108, 45);
+            this.uxLabelMovieTitle.Size = new System.Drawing.Size(74, 30);
             this.uxLabelMovieTitle.TabIndex = 12;
             this.uxLabelMovieTitle.Text = "Name";
             // 
@@ -89,43 +87,46 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(57, 213);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(38, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 45);
+            this.label1.Size = new System.Drawing.Size(60, 30);
             this.label1.TabIndex = 14;
             this.label1.Text = "DOB";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(163, 228);
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 148);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(363, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(243, 20);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // uxDeathCheckBox
             // 
             this.uxDeathCheckBox.AutoSize = true;
-            this.uxDeathCheckBox.Location = new System.Drawing.Point(111, 284);
+            this.uxDeathCheckBox.Location = new System.Drawing.Point(74, 185);
+            this.uxDeathCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uxDeathCheckBox.Name = "uxDeathCheckBox";
             this.uxDeathCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.uxDeathCheckBox.Size = new System.Drawing.Size(122, 24);
+            this.uxDeathCheckBox.Size = new System.Drawing.Size(84, 17);
             this.uxDeathCheckBox.TabIndex = 16;
             this.uxDeathCheckBox.Text = "Death Date:";
             this.uxDeathCheckBox.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(239, 280);
+            this.dateTimePicker2.Location = new System.Drawing.Point(159, 182);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(301, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(202, 20);
             this.dateTimePicker2.TabIndex = 17;
             // 
             // uxInsertButton
             // 
-            this.uxInsertButton.Location = new System.Drawing.Point(46, 368);
+            this.uxInsertButton.Location = new System.Drawing.Point(31, 239);
+            this.uxInsertButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uxInsertButton.Name = "uxInsertButton";
-            this.uxInsertButton.Size = new System.Drawing.Size(149, 58);
+            this.uxInsertButton.Size = new System.Drawing.Size(99, 38);
             this.uxInsertButton.TabIndex = 18;
             this.uxInsertButton.Text = "Insert";
             this.uxInsertButton.UseVisualStyleBackColor = true;
@@ -134,18 +135,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(657, 168);
+            this.dataGridView1.Location = new System.Drawing.Point(438, 109);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(361, 234);
             this.dataGridView1.TabIndex = 19;
             // 
             // uxViewButton
             // 
-            this.uxViewButton.Location = new System.Drawing.Point(1079, 91);
+            this.uxViewButton.Location = new System.Drawing.Point(719, 59);
+            this.uxViewButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uxViewButton.Name = "uxViewButton";
-            this.uxViewButton.Size = new System.Drawing.Size(136, 58);
+            this.uxViewButton.Size = new System.Drawing.Size(91, 38);
             this.uxViewButton.TabIndex = 20;
             this.uxViewButton.Text = "Search";
             this.uxViewButton.UseVisualStyleBackColor = true;
@@ -155,17 +158,28 @@
             // 
             this.uxSearchBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxSearchBox.Location = new System.Drawing.Point(657, 97);
-            this.uxSearchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxSearchBox.Location = new System.Drawing.Point(438, 63);
             this.uxSearchBox.Multiline = true;
             this.uxSearchBox.Name = "uxSearchBox";
-            this.uxSearchBox.Size = new System.Drawing.Size(402, 52);
+            this.uxSearchBox.Size = new System.Drawing.Size(269, 35);
             this.uxSearchBox.TabIndex = 21;
+            // 
+            // Deleate
+            // 
+            this.Deleate.Location = new System.Drawing.Point(262, 239);
+            this.Deleate.Margin = new System.Windows.Forms.Padding(2);
+            this.Deleate.Name = "Deleate";
+            this.Deleate.Size = new System.Drawing.Size(99, 38);
+            this.Deleate.TabIndex = 22;
+            this.Deleate.Text = "Deleate";
+            this.Deleate.UseVisualStyleBackColor = true;
+            this.Deleate.Click += new System.EventHandler(this.Deleate_Click);
             // 
             // People
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Deleate);
             this.Controls.Add(this.uxSearchBox);
             this.Controls.Add(this.uxViewButton);
             this.Controls.Add(this.dataGridView1);
@@ -177,8 +191,9 @@
             this.Controls.Add(this.uxPersonName);
             this.Controls.Add(this.uxLabelMovieTitle);
             this.Controls.Add(this.uxLabelTitle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "People";
-            this.Size = new System.Drawing.Size(1276, 565);
+            this.Size = new System.Drawing.Size(851, 367);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,5 +213,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button uxViewButton;
         private System.Windows.Forms.TextBox uxSearchBox;
+        private System.Windows.Forms.Button Deleate;
     }
 }

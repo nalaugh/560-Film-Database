@@ -29,6 +29,12 @@ namespace CIS_560_Proj
             return executor.ExecuteNonQuery(d);
         }
 
+        public Person DeleatePerson(int id,string Name, string DOB, string DeathDate)
+        {
+            var d = new DeleateDelegate(id,Name, DOB, DeathDate);
+            return executor.ExecuteNonQuery(d);
+        }
+
         public Person FetchPerson(int personId)
         {
             var d = new FetchDelegate(personId);
@@ -41,6 +47,11 @@ namespace CIS_560_Proj
             return executor.ExecuteReader(d);
         }
 
+        public IReadOnlyList<Person> RetrievePersonDealeated()
+        {
+            return executor.ExecuteReader(new RetrieveDelegateDeleated());
+        }
+
         public IReadOnlyList<Person> RetrievePersons()
         {
             return executor.ExecuteReader(new RetrieveDelegate());
@@ -48,6 +59,11 @@ namespace CIS_560_Proj
         public IReadOnlyList<Person> RetrievePersonsName(string name)
         {
             return executor.ExecuteReader(new RetrieveDelegateName(name));
+        }
+        public Person UpdateProduction(int productionName, string location, string productionID, string death)
+        {
+            var d = new UpdateDelegate(productionName, location, productionID, death);
+            return executor.ExecuteNonQuery(d);
         }
 
     }

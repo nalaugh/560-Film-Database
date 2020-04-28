@@ -29,7 +29,7 @@ namespace CIS_560_Proj.Interface
 
         ProductionHouse UpdateProduction(string productionName, string location, int productionID);
 
-        ProductionHouse DeleateProductionHouse(int name);
+        ProductionHouse DeleateProductionHouse(string Name, string location, int pId);
         IReadOnlyList<ProductionHouse> RetrieveProductionHouseDealeated();
 
     }

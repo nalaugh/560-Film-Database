@@ -58,6 +58,12 @@
     <Compile Include="GUI\People.Designer.cs">
       <DependentUpon>People.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDataDelegate.cs" />
     <Compile Include="IDataReaderDelegate.cs" />
     <Compile Include="IDataRowReader.cs" />
@@ -83,6 +89,7 @@
     <Compile Include="Movie Delegates\FetchDelegate.cs" />
     <Compile Include="Movie Delegates\GetDelegate.cs" />
     <Compile Include="Movie Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Movie Delegates\Update.cs" />
     <Compile Include="MoviePersons\CreateDelegate.cs" />
     <Compile Include="MoviePersons\FetchDelegate.cs" />
     <Compile Include="MoviePersons\GetDelegate.cs" />
@@ -96,10 +103,12 @@
     <Compile Include="Oscars Delegates\FetchDelegate.cs" />
     <Compile Include="Oscars Delegates\GetDelegate.cs" />
     <Compile Include="Oscars Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Oscars Delegates\Update.cs" />
     <Compile Include="Person Delegates\CreateDelegate.cs" />
     <Compile Include="Person Delegates\FetchDelegate.cs" />
     <Compile Include="Person Delegates\GetDelegate.cs" />
     <Compile Include="Person Delegates\RetrieveDelegate.cs" />
+    <Compile Include="Person Delegates\Update.cs" />
     <Compile Include="Production Delegates\GetDelegate.cs" />
     <Compile Include="Production Delegates\CreateDelegate.cs" />
     <Compile Include="Production Delegates\FetchDelegate.cs" />
@@ -136,6 +145,7 @@
     </Compile>
     <Compile Include="RecordNotFoundException.cs" />
     <Compile Include="Sales Delegates\CreateDelegate.cs" />
+    <Compile Include="Sales Delegates\DeleateDelegate.cs" />
     <Compile Include="Sales Delegates\FetchDelegate.cs" />
     <Compile Include="Sales Delegates\RetrieveDelegate.cs" />
     <Compile Include="SqlCommandExecutor.cs" />
@@ -158,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\People.resx">
       <DependentUpon>People.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

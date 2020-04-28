@@ -29,7 +29,6 @@ namespace CIS_560_Proj
         }
 
 
-
         public ProductionHouse FetchProductionHouse(int productionId)
         {
             var d = new FetchDelegate(productionId);
@@ -52,11 +51,21 @@ namespace CIS_560_Proj
             return executor.ExecuteReader(new RetrieveDelegateName(Name));
         }
 
+        public IReadOnlyList<ProductionHouse> RetrieveProductionHouseDealeated()
+        {
+            return executor.ExecuteReader(new RetrieveDelegateDeleated());
+        }
+
         public ProductionHouse UpdateProduction (string productionName, string location, int productionID)
         {
             var d = new UpdateDelegate(productionName, location, productionID);
             return executor.ExecuteReader(d);
         }
-     
+
+        public ProductionHouse DeleateProductionHouse(string Name, string location, int pId)
+        {
+            return executor.ExecuteReader(new DeleateDelegate(Name, location, pId));
+        }
+
     }
 }

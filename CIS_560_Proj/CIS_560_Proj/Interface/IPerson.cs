@@ -45,8 +45,10 @@ namespace CIS_560_Proj.Interface
         /// </returns>
         Person CeatePerson(string Name, string DOB, string DeathDate);
 
-        Person DeleatePerson(int name);
+        Person DeleatePerson(int PersonId, string Name, string DOB, string Death);
         IReadOnlyList<Person> RetrievePersonDealeated();
+
+        Person UpdateProduction(int productionName, string location, string productionID, string death);
 
     }
 }

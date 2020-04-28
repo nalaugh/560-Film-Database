@@ -78,14 +78,6 @@ namespace CIS_560_Proj
             awards.HandleDestroyed += new EventHandler(Updatelist);
         }
 
-        private void Update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Delete_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

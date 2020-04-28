@@ -100,5 +100,19 @@ namespace CIS_560_Proj
         {
             display_data();
         }
+
+        private void uxDeleteMovie_Click(object sender, EventArgs e)
+        {
+           
+            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+
+            var id = movierepo.GetMovie(uxTextBoxMovieTitle.ToString());
+            var createdPH = movierepo.DeleateMovie(id.MovieId, id.ProductionId.ToString(), id.MovieName, id.ReleaseDate);
+
+            dataGridView1.DataSource = movierepo.RetrieveMovieDealeated();
+        }
     }
 }

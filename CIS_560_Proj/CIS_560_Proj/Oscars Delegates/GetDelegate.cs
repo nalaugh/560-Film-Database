@@ -18,7 +18,7 @@ namespace CIS_560_Proj.Oscars_Delegates
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("Category", Name);
+            command.Parameters.AddWithValue("Year", Name);
         }
 
         public override Oscars Translate(SqlCommand command, IDataRowReader reader)

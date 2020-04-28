@@ -28,4 +28,29 @@ namespace CIS_560_Proj.Oscars_Delegates
             return Movie;
         }
     }
+    internal class RetrieveDelegateDeleated : DataReaderDelegate<IReadOnlyList<Oscars>>
+    {
+        public RetrieveDelegateDeleated()
+          : base("Film.RetrieveOscarsDeleated")
+        {
+        }
+
+        public override IReadOnlyList<Oscars> Translate(SqlCommand command, IDataRowReader reader)
+        {
+            var Movie = new List<Oscars>();
+
+            while (reader.Read())
+            {
+
+                Movie.Add(new Oscars(reader.GetInt32("OscarsId"),
+               reader.GetInt32("InidiualAwardsWonId"),
+                reader.GetInt32("MovieAwardsWonId"),
+                reader.GetInt32("Year"),
+                reader.GetString("IsDeleaded")
+               ));
+            }
+
+            return Movie;
+        }
+    }
 }

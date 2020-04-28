@@ -29,19 +29,37 @@ namespace CIS_560_Proj
             return executor.ExecuteNonQuery(d);
         }
 
+        public Oscars DeleateOscars(int id, int IId, int mid, int year)
+        {
+            var d = new DeleateDelegate(id, IId,mid, year);
+            return executor.ExecuteNonQuery(d);
+        }
+
         public Oscars FetchOscars(int OscarId)
         {
-            throw new NotImplementedException();
+            var d = new FetchDelegate(OscarId);
+            return executor.ExecuteReader(d);
         }
 
         public Oscars GetOscars(int Year)
         {
-            throw new NotImplementedException();
+            var d = new GetDelegate(Year);
+            return executor.ExecuteReader(d);
         }
 
         public IReadOnlyList<Oscars> RetrieveOscars()
         {
-            throw new NotImplementedException();
+            return executor.ExecuteReader(new RetrieveDelegate());
+        }
+
+        public IReadOnlyList<Oscars> RetrieveOscarsDealeated()
+        {
+            return executor.ExecuteReader(new RetrieveDelegateDeleated());
+        }
+        public Oscars UpdateDelegate(int OID, int IndividualAwardsWonId, int MovieAwardsWonId, int Year)
+        {
+            var d = new UpdateDelegate(OID, IndividualAwardsWonId, MovieAwardsWonId, Year);
+            return executor.ExecuteNonQuery(d);
         }
     }
 }
