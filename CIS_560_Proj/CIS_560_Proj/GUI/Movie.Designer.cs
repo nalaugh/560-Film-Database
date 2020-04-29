@@ -52,7 +52,7 @@
             // 
             this.uxTextBoxMovieTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxTextBoxMovieTitle.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxTextBoxMovieTitle.Location = new System.Drawing.Point(281, 130);
+            this.uxTextBoxMovieTitle.Location = new System.Drawing.Point(269, 112);
             this.uxTextBoxMovieTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxTextBoxMovieTitle.Multiline = true;
             this.uxTextBoxMovieTitle.Name = "uxTextBoxMovieTitle";
@@ -117,7 +117,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(355, 226);
+            this.dateTimePicker1.Location = new System.Drawing.Point(373, 226);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(305, 26);
@@ -194,7 +194,7 @@
             // 
             this.uxProductionName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxProductionName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxProductionName.Location = new System.Drawing.Point(335, 287);
+            this.uxProductionName.Location = new System.Drawing.Point(342, 285);
             this.uxProductionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxProductionName.Multiline = true;
             this.uxProductionName.Name = "uxProductionName";
@@ -254,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.uxSearchButton);
             this.Controls.Add(this.uxSearchTextBox);
             this.Controls.Add(this.label3);

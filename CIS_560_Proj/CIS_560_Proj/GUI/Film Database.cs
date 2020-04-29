@@ -17,8 +17,7 @@ namespace CIS_560_Proj
         public Form1()
         {
             InitializeComponent();
-            this.listBox1.Items.Clear();
-            this.listBox1.Items.AddRange(items.ToArray());
+        
         }
 
 
@@ -37,8 +36,6 @@ namespace CIS_560_Proj
         }
         public void Updatelist(object sender, EventArgs e)
         {
-            this.listBox1.Items.Clear();
-            this.listBox1.Items.AddRange(items.ToArray());
         }
 
         private void Search_Click(object sender, EventArgs e)

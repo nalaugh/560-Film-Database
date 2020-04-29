@@ -53,7 +53,7 @@
             this.uxLabelTitle.Location = new System.Drawing.Point(0, 0);
             this.uxLabelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelTitle.Name = "uxLabelTitle";
-            this.uxLabelTitle.Size = new System.Drawing.Size(1558, 77);
+            this.uxLabelTitle.Size = new System.Drawing.Size(1517, 77);
             this.uxLabelTitle.TabIndex = 10;
             this.uxLabelTitle.Text = "Awards";
             this.uxLabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,7 +62,7 @@
             // 
             this.uxNumericUpDownYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxNumericUpDownYear.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxNumericUpDownYear.Location = new System.Drawing.Point(489, 125);
+            this.uxNumericUpDownYear.Location = new System.Drawing.Point(468, 125);
             this.uxNumericUpDownYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxNumericUpDownYear.Maximum = new decimal(new int[] {
             5000,
@@ -90,7 +90,7 @@
             this.uxLabelReleaseDate.BackColor = System.Drawing.Color.White;
             this.uxLabelReleaseDate.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.uxLabelReleaseDate.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelReleaseDate.Location = new System.Drawing.Point(116, 118);
+            this.uxLabelReleaseDate.Location = new System.Drawing.Point(95, 118);
             this.uxLabelReleaseDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelReleaseDate.Name = "uxLabelReleaseDate";
             this.uxLabelReleaseDate.Size = new System.Drawing.Size(192, 45);
@@ -112,7 +112,7 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(489, 235);
+            this.listBox2.Location = new System.Drawing.Point(468, 235);
             this.listBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(178, 144);
@@ -123,7 +123,7 @@
             this.uxButtonInsertMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxButtonInsertMovie.Enabled = false;
             this.uxButtonInsertMovie.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxButtonInsertMovie.Location = new System.Drawing.Point(108, 426);
+            this.uxButtonInsertMovie.Location = new System.Drawing.Point(123, 426);
             this.uxButtonInsertMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxButtonInsertMovie.Name = "uxButtonInsertMovie";
             this.uxButtonInsertMovie.Size = new System.Drawing.Size(206, 78);
@@ -137,24 +137,24 @@
             this.Deleate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Deleate.Enabled = false;
             this.Deleate.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deleate.Location = new System.Drawing.Point(464, 426);
+            this.Deleate.Location = new System.Drawing.Point(428, 426);
             this.Deleate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Deleate.Name = "Deleate";
             this.Deleate.Size = new System.Drawing.Size(206, 78);
             this.Deleate.TabIndex = 16;
-            this.Deleate.Text = "Deleate";
+            this.Deleate.Text = "Delete";
             this.Deleate.UseVisualStyleBackColor = true;
             this.Deleate.Click += new System.EventHandler(this.Deleate_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(755, 200);
+            this.dataGridView1.Location = new System.Drawing.Point(734, 200);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(586, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(714, 320);
             this.dataGridView1.TabIndex = 44;
             // 
             // label1
@@ -171,11 +171,11 @@
             // 
             this.uxSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxSearchTextBox.Location = new System.Drawing.Point(755, 140);
+            this.uxSearchTextBox.Location = new System.Drawing.Point(734, 139);
             this.uxSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxSearchTextBox.Multiline = true;
             this.uxSearchTextBox.Name = "uxSearchTextBox";
-            this.uxSearchTextBox.Size = new System.Drawing.Size(433, 52);
+            this.uxSearchTextBox.Size = new System.Drawing.Size(562, 52);
             this.uxSearchTextBox.TabIndex = 47;
             // 
             // uxSearchProduction
@@ -183,7 +183,7 @@
             this.uxSearchProduction.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchProduction.Enabled = false;
             this.uxSearchProduction.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSearchProduction.Location = new System.Drawing.Point(1197, 131);
+            this.uxSearchProduction.Location = new System.Drawing.Point(1304, 132);
             this.uxSearchProduction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxSearchProduction.Name = "uxSearchProduction";
             this.uxSearchProduction.Size = new System.Drawing.Size(144, 60);
@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uxSearchTextBox);
             this.Controls.Add(this.uxSearchProduction);
@@ -211,7 +211,7 @@
             this.Controls.Add(this.uxLabelTitle);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Awards";
-            this.Size = new System.Drawing.Size(1558, 594);
+            this.Size = new System.Drawing.Size(1517, 749);
             ((System.ComponentModel.ISupportInitialize)(this.uxNumericUpDownYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

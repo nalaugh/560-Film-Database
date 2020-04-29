@@ -124,11 +124,11 @@
     <Compile Include="GUI\Movie.Designer.cs">
       <DependentUpon>Movie.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form1.cs">
+    <Compile Include="GUI\Film Database.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\Film Database.Designer.cs">
+      <DependentUpon>Film Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\IProductionHouse.cs" />
     <Compile Include="Interface\Isales.cs" />
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="GUI\Movie.resx">
       <DependentUpon>Movie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Film Database.resx">
+      <DependentUpon>Film Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\People.resx">
       <DependentUpon>People.cs</DependentUpon>
