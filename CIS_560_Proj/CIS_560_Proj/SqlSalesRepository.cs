@@ -36,5 +36,10 @@ namespace CIS_560_Proj
         {
             return executor.ExecuteReader(new RetrieveDelegate());
         }
+        public Sales DeleteSales(int MovieID)
+        {
+            var d = new DeleateDelegate(MovieID);
+            return executor.ExecuteNonQuery(d);
+        }
     }
 }

@@ -60,9 +60,9 @@ namespace CIS_560_Proj
         {
             return executor.ExecuteReader(new RetrieveDelegateName(name));
         }
-        public Person UpdateProduction(int productionName, string location, string productionID, string death)
+        public Person UpdatePerson(int id, string name, string DOB, string death)
         {
-            var d = new UpdateDelegate(productionName, location, productionID, death);
+            var d = new UpdateDelegate(id, name, DOB, death);
             return executor.ExecuteNonQuery(d);
         }
 

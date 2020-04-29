@@ -17,7 +17,10 @@ namespace CIS_560_Proj.GUI
         {
             InitializeComponent();
             uxButtonInsertProduction.Enabled = true;
-            uxSearchProduction.Enabled = true; 
+            uxSearchProduction.Enabled = true;
+            uxDeleteProduction.Enabled = true;
+            uxViewButton.Enabled = true;
+
         }
 
         private void uxButtonInsertProduction_Click(object sender, EventArgs e)
@@ -41,7 +44,10 @@ namespace CIS_560_Proj.GUI
                 {
                     MessageBox.Show("Sorry, the production company already exists.");
                 }
-                dataGridView1.DataSource = repo.RetrieveProduction();
+                dataGridView1.DataSource = null;
+
+                dataGridView1.DataSource = repo.RetrieveProduction2();
+                
 
 
             }
@@ -52,7 +58,9 @@ namespace CIS_560_Proj.GUI
 
                 //Should be modify stored procedure 
                 var createdPH = repo.UpdateProduction(name, location, ProductionId);
-                dataGridView1.DataSource = repo.RetrieveProduction();
+                dataGridView1.DataSource = null;
+
+                dataGridView1.DataSource = repo.RetrieveProduction2();
 
             }
 
@@ -70,13 +78,45 @@ namespace CIS_560_Proj.GUI
                 "User id=phyo;" +
                 "Password=zinrocks@4321;");
             string Name = uxSearchTextBox.Text;
+            dataGridView1.DataSource = null;
+
             dataGridView1.DataSource = repo.RetrieveProductionbyName(Name);
             
 
         }
 
      
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+
+
+        private void uxDeleteProduction_Click(object sender, EventArgs e)
+        {
+            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            var id = repo.GetProductionHouse(uxProductionName.Text);
+            var createdPH = repo.DeleteProduction(uxProductionName.Text, uxProductionLocation.Text, id.ProductionId);
+            MessageBox.Show("Deleted");
+            //fix 
+            dataGridView1.DataSource = null;
+
+            dataGridView1.DataSource = repo.RetrieveProduction2();
+        }
+
+        private void uxViewButton_Click(object sender, EventArgs e)
+        {
+            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.DataSource = repo.RetrieveProduction2();
+
+            dataGridView1.Refresh();
+        }
+
+        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
         {
             //Check to see if the row clicked is inside the grid
             if (dataGridView1.CurrentRow.Index != -1)
@@ -87,17 +127,6 @@ namespace CIS_560_Proj.GUI
                 uxButtonInsertProduction.Text = "Update";
                 uxDeleteProduction.Enabled = true;
             }
-        }
-
-        private void uxDeleteProduction_Click(object sender, EventArgs e)
-        {
-            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
-            var id = repo.GetProductionHouse(uxProductionName.Text);
-            var createdPH = repo.DeleateProductionHouse(uxProductionName.Text, uxProductionLocation.Text, id.ProductionId);
-            dataGridView1.DataSource = repo.RetrieveProductionHouseDealeated();
         }
     }
 }

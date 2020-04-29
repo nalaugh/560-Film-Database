@@ -18,13 +18,13 @@ namespace CIS_560_Proj.Person_Delegates
 
             while (reader.Read())
             {
-
                 person.Add(new Person(reader.GetInt32("PersonId"),
-               reader.GetString("Name"),
-               reader.GetString("DOB"),"NULL"
-               //,reader.GetString("DeathDate")
-               )
-                    ); ;
+                                   reader.GetString("Name"),
+                                   reader.GetString("DOB"), "NULL",
+                                   //,reader.GetString("DeathDate")
+                                   reader.GetString("IsDeleted")
+                                   )
+                                        ); 
 
             }
 
@@ -40,7 +40,7 @@ namespace CIS_560_Proj.Person_Delegates
         private readonly string name;
 
         public RetrieveDelegateName(string names)
-           : base("RetrieveProductionByName")
+           : base("RetrievePersonByName")
         {
             this.name = names;
         }
@@ -57,10 +57,12 @@ namespace CIS_560_Proj.Person_Delegates
             while (reader.Read())
             {
                 person.Add(new Person(reader.GetInt32("PersonId"),
-               reader.GetString("Name"),
-               reader.GetString("DOB"), "NULL"
-               //,reader.GetString("DeathDate")
-               )); ;
+                    reader.GetString("Name"),
+                    reader.GetString("DOB"), "NULL",
+                    //,reader.GetString("DeathDate")
+                    reader.GetString("IsDeleted")
+                    )
+                         ); 
             }
 
             return person;
@@ -72,7 +74,7 @@ namespace CIS_560_Proj.Person_Delegates
 
 
             public RetrieveDelegateDeleated()
-               : base("RetrieveProductionDeleated")
+               : base("RetrievePersonsDeleated")
             {
 
             }
@@ -87,9 +89,9 @@ namespace CIS_560_Proj.Person_Delegates
                    reader.GetString("Name"),
                    reader.GetString("DOB"), "NULL",
                    //,reader.GetString("DeathDate")
-                   reader.GetString("IsDeleated")
+                   reader.GetString("IsDeleted")
                    )
-                        ); ;
+                        ); 
 
                 }
 

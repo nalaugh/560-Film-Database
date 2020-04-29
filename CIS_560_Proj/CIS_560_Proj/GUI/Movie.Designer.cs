@@ -33,27 +33,30 @@
             this.uxLabelReleaseDate = new System.Windows.Forms.Label();
             this.uxButtonInsertMovie = new System.Windows.Forms.Button();
             this.uxLabelTitle = new System.Windows.Forms.Label();
-            this.Persontext = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBoxOptoins = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.uxUpdateMovie = new System.Windows.Forms.Button();
+            this.uxInsertButton = new System.Windows.Forms.Button();
             this.uxDeleteMovie = new System.Windows.Forms.Button();
             this.uxViewMovies = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.uxProductionName = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.uxSearchTextBox = new System.Windows.Forms.TextBox();
+            this.uxSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // uxTextBoxMovieTitle
             // 
             this.uxTextBoxMovieTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxTextBoxMovieTitle.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxTextBoxMovieTitle.Location = new System.Drawing.Point(190, 77);
+            this.uxTextBoxMovieTitle.Location = new System.Drawing.Point(281, 130);
+            this.uxTextBoxMovieTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxTextBoxMovieTitle.Multiline = true;
             this.uxTextBoxMovieTitle.Name = "uxTextBoxMovieTitle";
-            this.uxTextBoxMovieTitle.Size = new System.Drawing.Size(269, 35);
+            this.uxTextBoxMovieTitle.Size = new System.Drawing.Size(409, 61);
             this.uxTextBoxMovieTitle.TabIndex = 2;
             // 
             // uxLabelMovieTitle
@@ -63,9 +66,10 @@
             this.uxLabelMovieTitle.BackColor = System.Drawing.Color.White;
             this.uxLabelMovieTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.uxLabelMovieTitle.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelMovieTitle.Location = new System.Drawing.Point(-189, 90);
+            this.uxLabelMovieTitle.Location = new System.Drawing.Point(-225, 138);
+            this.uxLabelMovieTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelMovieTitle.Name = "uxLabelMovieTitle";
-            this.uxLabelMovieTitle.Size = new System.Drawing.Size(135, 30);
+            this.uxLabelMovieTitle.Size = new System.Drawing.Size(198, 45);
             this.uxLabelMovieTitle.TabIndex = 3;
             this.uxLabelMovieTitle.Text = "Movie Title:";
             // 
@@ -76,9 +80,10 @@
             this.uxLabelReleaseDate.BackColor = System.Drawing.Color.White;
             this.uxLabelReleaseDate.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.uxLabelReleaseDate.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelReleaseDate.Location = new System.Drawing.Point(9, 141);
+            this.uxLabelReleaseDate.Location = new System.Drawing.Point(29, 211);
+            this.uxLabelReleaseDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelReleaseDate.Name = "uxLabelReleaseDate";
-            this.uxLabelReleaseDate.Size = new System.Drawing.Size(221, 30);
+            this.uxLabelReleaseDate.Size = new System.Drawing.Size(322, 45);
             this.uxLabelReleaseDate.TabIndex = 5;
             this.uxLabelReleaseDate.Text = "Movie Release Date:";
             // 
@@ -87,13 +92,13 @@
             this.uxButtonInsertMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxButtonInsertMovie.Enabled = false;
             this.uxButtonInsertMovie.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxButtonInsertMovie.Location = new System.Drawing.Point(-182, 294);
+            this.uxButtonInsertMovie.Location = new System.Drawing.Point(-214, 452);
+            this.uxButtonInsertMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxButtonInsertMovie.Name = "uxButtonInsertMovie";
-            this.uxButtonInsertMovie.Size = new System.Drawing.Size(103, 39);
+            this.uxButtonInsertMovie.Size = new System.Drawing.Size(154, 60);
             this.uxButtonInsertMovie.TabIndex = 8;
             this.uxButtonInsertMovie.Text = "Insert";
             this.uxButtonInsertMovie.UseVisualStyleBackColor = true;
-            this.uxButtonInsertMovie.Click += new System.EventHandler(this.uxButtonInsertMovie_Click);
             // 
             // uxLabelTitle
             // 
@@ -103,70 +108,44 @@
             this.uxLabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
             this.uxLabelTitle.ForeColor = System.Drawing.Color.White;
             this.uxLabelTitle.Location = new System.Drawing.Point(0, 0);
+            this.uxLabelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelTitle.Name = "uxLabelTitle";
-            this.uxLabelTitle.Size = new System.Drawing.Size(901, 50);
+            this.uxLabelTitle.Size = new System.Drawing.Size(1471, 77);
             this.uxLabelTitle.TabIndex = 9;
             this.uxLabelTitle.Text = "Movie";
             this.uxLabelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Persontext
-            // 
-            this.Persontext.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Persontext.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.Persontext.Location = new System.Drawing.Point(151, 234);
-            this.Persontext.Multiline = true;
-            this.Persontext.Name = "Persontext";
-            this.Persontext.Size = new System.Drawing.Size(136, 35);
-            this.Persontext.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-189, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 30);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Actor/Director:";
-            // 
-            // listBoxOptoins
-            // 
-            this.listBoxOptoins.FormattingEnabled = true;
-            this.listBoxOptoins.Location = new System.Drawing.Point(343, 234);
-            this.listBoxOptoins.Name = "listBoxOptoins";
-            this.listBoxOptoins.Size = new System.Drawing.Size(87, 43);
-            this.listBoxOptoins.TabIndex = 12;
-            // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(236, 151);
+            this.dateTimePicker1.Location = new System.Drawing.Point(355, 226);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(305, 26);
             this.dateTimePicker1.TabIndex = 22;
             // 
-            // uxUpdateMovie
+            // uxInsertButton
             // 
-            this.uxUpdateMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uxUpdateMovie.Enabled = false;
-            this.uxUpdateMovie.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxUpdateMovie.Location = new System.Drawing.Point(132, 292);
-            this.uxUpdateMovie.Name = "uxUpdateMovie";
-            this.uxUpdateMovie.Size = new System.Drawing.Size(98, 39);
-            this.uxUpdateMovie.TabIndex = 23;
-            this.uxUpdateMovie.Text = "Update";
-            this.uxUpdateMovie.UseVisualStyleBackColor = true;
+            this.uxInsertButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uxInsertButton.Enabled = false;
+            this.uxInsertButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxInsertButton.Location = new System.Drawing.Point(110, 441);
+            this.uxInsertButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxInsertButton.Name = "uxInsertButton";
+            this.uxInsertButton.Size = new System.Drawing.Size(198, 77);
+            this.uxInsertButton.TabIndex = 23;
+            this.uxInsertButton.Text = "Insert";
+            this.uxInsertButton.UseVisualStyleBackColor = true;
+            this.uxInsertButton.Click += new System.EventHandler(this.uxInsertButton_Click_1);
             // 
             // uxDeleteMovie
             // 
             this.uxDeleteMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxDeleteMovie.Enabled = false;
             this.uxDeleteMovie.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxDeleteMovie.Location = new System.Drawing.Point(119, 378);
+            this.uxDeleteMovie.Location = new System.Drawing.Point(248, 573);
+            this.uxDeleteMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxDeleteMovie.Name = "uxDeleteMovie";
-            this.uxDeleteMovie.Size = new System.Drawing.Size(149, 39);
+            this.uxDeleteMovie.Size = new System.Drawing.Size(224, 72);
             this.uxDeleteMovie.TabIndex = 24;
             this.uxDeleteMovie.Text = "Delete";
             this.uxDeleteMovie.UseVisualStyleBackColor = true;
@@ -177,9 +156,10 @@
             this.uxViewMovies.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxViewMovies.Enabled = false;
             this.uxViewMovies.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxViewMovies.Location = new System.Drawing.Point(316, 311);
+            this.uxViewMovies.Location = new System.Drawing.Point(386, 441);
+            this.uxViewMovies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxViewMovies.Name = "uxViewMovies";
-            this.uxViewMovies.Size = new System.Drawing.Size(99, 39);
+            this.uxViewMovies.Size = new System.Drawing.Size(191, 77);
             this.uxViewMovies.TabIndex = 25;
             this.uxViewMovies.Text = "View";
             this.uxViewMovies.UseVisualStyleBackColor = true;
@@ -188,13 +168,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(464, 66);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(739, 173);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(417, 383);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 249);
             this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // label2
             // 
@@ -203,9 +183,10 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 185);
+            this.label2.Location = new System.Drawing.Point(29, 285);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 30);
+            this.label2.Size = new System.Drawing.Size(293, 45);
             this.label2.TabIndex = 27;
             this.label2.Text = "Production Name:";
             // 
@@ -213,37 +194,87 @@
             // 
             this.uxProductionName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxProductionName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxProductionName.Location = new System.Drawing.Point(197, 186);
+            this.uxProductionName.Location = new System.Drawing.Point(335, 287);
+            this.uxProductionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxProductionName.Multiline = true;
             this.uxProductionName.Name = "uxProductionName";
-            this.uxProductionName.Size = new System.Drawing.Size(233, 32);
+            this.uxProductionName.Size = new System.Drawing.Size(355, 56);
             this.uxProductionName.TabIndex = 28;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(739, 441);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(642, 256);
+            this.dataGridView3.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(29, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(220, 45);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Movie Name:";
+            // 
+            // uxSearchTextBox
+            // 
+            this.uxSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uxSearchTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.uxSearchTextBox.Location = new System.Drawing.Point(739, 100);
+            this.uxSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxSearchTextBox.Multiline = true;
+            this.uxSearchTextBox.Name = "uxSearchTextBox";
+            this.uxSearchTextBox.Size = new System.Drawing.Size(445, 52);
+            this.uxSearchTextBox.TabIndex = 31;
+            // 
+            // uxSearchButton
+            // 
+            this.uxSearchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uxSearchButton.Enabled = false;
+            this.uxSearchButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxSearchButton.Location = new System.Drawing.Point(1204, 89);
+            this.uxSearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uxSearchButton.Name = "uxSearchButton";
+            this.uxSearchButton.Size = new System.Drawing.Size(177, 64);
+            this.uxSearchButton.TabIndex = 32;
+            this.uxSearchButton.Text = "Search";
+            this.uxSearchButton.UseVisualStyleBackColor = true;
             // 
             // Add
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.uxSearchButton);
+            this.Controls.Add(this.uxSearchTextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.uxProductionName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uxViewMovies);
             this.Controls.Add(this.uxDeleteMovie);
-            this.Controls.Add(this.uxUpdateMovie);
+            this.Controls.Add(this.uxInsertButton);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.listBoxOptoins);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Persontext);
             this.Controls.Add(this.uxLabelTitle);
             this.Controls.Add(this.uxButtonInsertMovie);
             this.Controls.Add(this.uxLabelReleaseDate);
             this.Controls.Add(this.uxTextBoxMovieTitle);
             this.Controls.Add(this.uxLabelMovieTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Add";
-            this.Size = new System.Drawing.Size(901, 469);
+            this.Size = new System.Drawing.Size(1471, 722);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,15 +287,17 @@
         private System.Windows.Forms.Label uxLabelReleaseDate;
         private System.Windows.Forms.Button uxButtonInsertMovie;
         private System.Windows.Forms.Label uxLabelTitle;
-        private System.Windows.Forms.TextBox Persontext;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxOptoins;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button uxUpdateMovie;
+        private System.Windows.Forms.Button uxInsertButton;
         private System.Windows.Forms.Button uxDeleteMovie;
         private System.Windows.Forms.Button uxViewMovies;
         private System.Windows.Forms.DataGridView dataGridView1;
+
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox uxProductionName;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox uxSearchTextBox;
+        private System.Windows.Forms.Button uxSearchButton;
     }
 }

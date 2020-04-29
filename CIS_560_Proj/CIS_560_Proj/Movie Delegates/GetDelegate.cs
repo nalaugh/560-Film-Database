@@ -29,7 +29,7 @@ namespace CIS_560_Proj.Movie_Delegates
             return new Movie(Convert.ToInt32(reader.GetString("MovieId")),
                reader.GetInt32("ProductionId"),
                 Name,
-                reader.GetString("ReleasDate"));
+                "NULL", "NULL");
         }
     }
 }

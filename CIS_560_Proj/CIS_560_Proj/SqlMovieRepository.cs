@@ -16,9 +16,9 @@ namespace CIS_560_Proj
         {
             executor = new SqlCommandExecutor(connectionString);
         }
-        public Movie CreateMovie(string ProductionId, string MovieName, string ReleaseDate)
+        public Movie CreateMovie(int ProductionId, string MovieName, string ReleaseDate)
         {
-            if (string.IsNullOrWhiteSpace(ProductionId))
+            if (string.IsNullOrWhiteSpace(ProductionId.ToString()))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(ProductionId));
 
             if (string.IsNullOrWhiteSpace(MovieName))
@@ -31,10 +31,10 @@ namespace CIS_560_Proj
             return executor.ExecuteNonQuery(d);
         }
 
-        public Movie DeleateMovie(int id,string pid, string name, string release)
+        public Movie DeleteMovie(int id,int pid, string name, string release)
         {
-            var d = new DeleateDelegate(id, pid, name, release);
-            return executor.ExecuteNonQuery(d);
+            return executor.ExecuteReader(new DeleteDelegate(id, pid, name, release));
+            
         }
 
         public Movie FetchMovie(int productionId)

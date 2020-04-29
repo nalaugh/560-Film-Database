@@ -54,7 +54,7 @@ namespace CIS_560_Proj
 
         public IReadOnlyList<Oscars> RetrieveOscarsDealeated()
         {
-            return executor.ExecuteReader(new RetrieveDelegateDeleated());
+            return executor.ExecuteReader(new RetrieveDelegate());
         }
         public Oscars UpdateDelegate(int OID, int IndividualAwardsWonId, int MovieAwardsWonId, int Year)
         {

@@ -30,7 +30,7 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
 
         public override IndividualAwardsWon Translate(SqlCommand command)
         {
-            return new IndividualAwardsWon((int)command.Parameters["MovieAwardsWon"].Value, movieId);
+            return new IndividualAwardsWon((int)command.Parameters["MovieAwardsWon"].Value, movieId, "NULL");
         }
     }
 }

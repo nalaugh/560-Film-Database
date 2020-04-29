@@ -15,6 +15,8 @@ namespace CIS_560_Proj.GUI
         public UserControl1()
         {
             InitializeComponent();
+
+
         }
     }
 }

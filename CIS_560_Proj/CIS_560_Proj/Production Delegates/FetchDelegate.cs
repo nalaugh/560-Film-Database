@@ -29,7 +29,8 @@ namespace CIS_560_Proj.Production_Delegates
 
             return new ProductionHouse(productionId,
                reader.GetString("ProductionName"),
-               reader.GetString("Location"));
+               reader.GetString("Location"),
+                "NULL");
         }
     }
 

@@ -9,9 +9,13 @@ namespace CIS_560_Proj.GUI
     {
         private IPerson repo;
 
+        private int PersonId;
+
         public People()
         {
             InitializeComponent();
+            uxDeleteButton.Enabled = false;
+            
         }
 
         private void uxInsertButton_Click(object sender, EventArgs e)
@@ -22,30 +26,46 @@ namespace CIS_560_Proj.GUI
                  "User id=phyo;" +
                  "Password=zinrocks@4321;");
 
-            var name = uxPersonName.Text;
-            var DOB = dateTimePicker1.Value.Date.ToString();
+            string name = uxPersonName.Text;
+            string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
+
             string death;
             if (uxDeathCheckBox.Checked)
-                death = dateTimePicker2.Value.Date.ToString();
+                death = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
             else
                 death = "NULL";
 
-            try
+            if (uxInsertButton.Text == "Insert")
             {
-                var createdPerson = repo.CeatePerson(name, DOB, death);
-                MessageBox.Show("The data has been successfully added.");
+
+                try
+                {
+                    var createdPerson = repo.CeatePerson(name, DOB, death);
+                    MessageBox.Show("The data has been successfully added.");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Data failed to be inserted." + exception);
+                }
             }
-            catch (Exception exception)
+            else
             {
-                Console.WriteLine("Error:" + exception);
+                
+                  var updatePerson = repo.UpdatePerson(PersonId,name, DOB, death);
+                    MessageBox.Show("The data has been successfully updated.");
+             
             }
+              
+           
+              
+            
 
 
             //Show all people
             dataGridView1.DataSource = repo.RetrievePersons();
         }
 
-        private void uxViewButton_Click(object sender, EventArgs e)
+        private void uxSearchButton_Click(object sender, EventArgs e)
         {
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
@@ -58,17 +78,50 @@ namespace CIS_560_Proj.GUI
             dataGridView1.DataSource = repo.RetrievePersonsName(name);
         }
 
-        private void Deleate_Click(object sender, EventArgs e)
+   
+
+        private void uxViewButton_Click(object sender, EventArgs e)
         {
+
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
                      "Password=zinrocks@4321;");
 
-            var id = repo.GetPerson(uxPersonName.ToString());
-            var createdPH = repo.DeleatePerson(id.PersonId, id.Name, id.DOB, id.DeathDate);
+            dataGridView1.DataSource = repo.RetrievePersons();
 
-            dataGridView1.DataSource = repo.RetrievePersonDealeated();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            PersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            uxPersonName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            uxInsertButton.Text = "Update";
+            uxDeleteButton.Enabled = true;
+           
+        }
+
+        private void uxDeleteButton_Click(object sender, EventArgs e)
+        {
+            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+                    "Initial Catalog=phyo;" +
+                    "User id=phyo;" +
+                    "Password=zinrocks@4321;");
+            var name = uxPersonName.Text;
+            string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
+
+            string death;
+            if (uxDeathCheckBox.Checked)
+                death = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
+            else
+                death = "NULL";
+
+            var id = repo.FetchPerson(PersonId);
+            var createdPH = repo.DeleatePerson(PersonId, name, DOB, death);
+
+            dataGridView1.DataSource = repo.RetrievePersons();
+
         }
     }
 }

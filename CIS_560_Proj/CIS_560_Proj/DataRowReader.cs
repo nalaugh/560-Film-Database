@@ -58,5 +58,12 @@ namespace CIS_560_Proj
                 throw new ColumnNotFoundException(name, ex);
             }
         }
+        public  bool IsDBNull(string name)
+        {
+            return GetValue(name, reader.IsDBNull);
+        }
+        
+
+        
     }
 }

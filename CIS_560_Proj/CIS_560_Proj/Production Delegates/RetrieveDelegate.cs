@@ -8,7 +8,7 @@ namespace CIS_560_Proj.Production_Delegates
     {
 
         public RetrieveDelegate()
-           : base("RetrieveProduction")
+           : base("RetrieveProduction2")
         {
         }
 
@@ -21,7 +21,8 @@ namespace CIS_560_Proj.Production_Delegates
                 production.Add(new ProductionHouse(
                    reader.GetInt32("ProductionId"),
                    reader.GetString("ProductionName"),
-                   reader.GetString("Location")));
+                   reader.GetString("Location"),
+                    reader.GetString("IsDeleted")));
             }
 
             return production;
@@ -39,7 +40,7 @@ namespace CIS_560_Proj.Production_Delegates
         public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
-            var p = command.Parameters.Add("Name",SqlDbType.NVarChar);
+            var p = command.Parameters.Add("Name",  SqlDbType.NVarChar);
             p.Value = name;
         }
         public override IReadOnlyList<ProductionHouse> Translate(SqlCommand command, IDataRowReader reader)
@@ -51,9 +52,8 @@ namespace CIS_560_Proj.Production_Delegates
                 production.Add(new ProductionHouse(
                    reader.GetInt32("ProductionId"),
                    reader.GetString("ProductionName"),
-                   reader.GetString("Location")
-                  
-                   )) ;
+                   reader.GetString("Location"),
+                    "NULL"));
             }
 
             return production;
@@ -65,7 +65,7 @@ namespace CIS_560_Proj.Production_Delegates
     {
 
         public RetrieveDelegateDeleated()
-           : base("RetrieveProductionDeleated")
+           : base("RetrieveProductionDeleted")
         {
         }
 
@@ -75,16 +75,20 @@ namespace CIS_560_Proj.Production_Delegates
 
             while (reader.Read())
             {
-                production.Add(new ProductionHouse(
-                   reader.GetInt32("ProductionId"),
-                   reader.GetString("ProductionName"),
-                   reader.GetString("Location"),
-                   reader.GetString("IsDeleated")
-                   ));
+
+                    production.Add(new ProductionHouse(
+                           reader.GetInt32("ProductionId"),
+                           reader.GetString("ProductionName"),
+                           reader.GetString("Location"),
+                           reader.GetString("IsDeleted")
+                           ));
+                
+
             }
 
             return production;
         }
     }
-
 }
+
+

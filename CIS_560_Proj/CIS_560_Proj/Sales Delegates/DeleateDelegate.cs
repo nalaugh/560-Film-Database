@@ -12,7 +12,7 @@ namespace CIS_560_Proj.Sales_Delegates
 
 
         public DeleateDelegate(int movieID)
-           : base("DeleateSales")
+           : base("DeleteSales")
         {
       
             this.movieId = movieID;
@@ -24,13 +24,13 @@ namespace CIS_560_Proj.Sales_Delegates
 
 
 
-           var p = command.Parameters.Add("MovieId", SqlDbType.Int);
+           var p = command.Parameters.Add("Name", SqlDbType.Int);
             p.Value = movieId;
         }
 
         public override Sales Translate(SqlCommand command)
         {
-            return null;
+            return new Sales(movieId, 0,0,"NULL");
         }
     }
 }

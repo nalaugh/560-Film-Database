@@ -29,7 +29,7 @@ namespace CIS_560_Proj.Oscars_Delegates
             return new Oscars(reader.GetInt32("OscarsId"),
                reader.GetInt32("InidiualAwardsWonId"),
                 reader.GetInt32("MovieAwardsWonId"),
-                Name
+                Name, reader.GetString("IsDeleated")
                 );
         }
     }

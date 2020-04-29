@@ -29,8 +29,8 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
                 throw new RecordNotFoundException(MovieAwardsWonId.ToString());
 
             return new IndividualAwardsWon(MovieAwardsWonId,
-               reader.GetInt32("MoviePersonId")
-              
+               reader.GetInt32("MoviePersonId"), reader.GetString("IsDeleated")
+
              );
         }
     }

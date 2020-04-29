@@ -10,5 +10,6 @@ namespace CIS_560_Proj
         int GetInt32(string name);
         string GetString(string name);
         T GetValue<T>(string name);
+        bool IsDBNull(string i);
     }
 }

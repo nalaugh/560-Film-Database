@@ -7,13 +7,13 @@ namespace CIS_560_Proj.Movie_Delegates
 {
     internal class CreateDelegate : NonQueryDataDelegate<Movie>
     {
-        public readonly string ProductionId;
+        public readonly int ProductionId;
         public readonly string MovieName;
         public readonly string ReleaseDate;
 
 
-        public CreateDelegate(string ProductionId, string MovieName, string ReleaseDate)
-           : base("Film.CreateMovie")
+        public CreateDelegate(int ProductionId, string MovieName, string ReleaseDate)
+           : base("AddMovie")
         {
             this.ProductionId = ProductionId;
             this.MovieName = MovieName;
@@ -24,7 +24,7 @@ namespace CIS_560_Proj.Movie_Delegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("ProductionId", SqlDbType.NVarChar);
+            var p = command.Parameters.Add("ProductionId", SqlDbType.Int);
             p.Value = ProductionId;
 
             p = command.Parameters.Add("MovieName", SqlDbType.NVarChar);
@@ -38,7 +38,7 @@ namespace CIS_560_Proj.Movie_Delegates
 
         public override Movie Translate(SqlCommand command)
         {
-            return new Movie((int)command.Parameters["MovieId"].Value, Convert.ToInt32(ProductionId), MovieName, ReleaseDate);
+            return new Movie((int)command.Parameters["MovieId"].Value, Convert.ToInt32(ProductionId), MovieName, ReleaseDate, "NULL");
         }
     }
 }

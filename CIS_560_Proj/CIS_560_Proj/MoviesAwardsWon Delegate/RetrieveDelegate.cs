@@ -7,7 +7,7 @@ namespace CIS_560_Proj.MoviesAwardsWon_Delegate
     internal class RetrieveDelegate : DataReaderDelegate<IReadOnlyList<MovieAwardsWon>>
     {
         public RetrieveDelegate()
-          : base("Film.RetrieveMovieAwardsWon")
+          : base("RetrieveMovieAwardsWon")
         {
         }
 

@@ -31,7 +31,7 @@ namespace CIS_560_Proj.Person_Delegates
 
             p = command.Parameters.Add("DOB", SqlDbType.NVarChar);
             p.Value = DOB;
-            p = command.Parameters.Add("DeathDate", SqlDbType.NVarChar);
+            p = command.Parameters.Add("Death", SqlDbType.NVarChar);
             p.Value = Death;
 
             p = command.Parameters.Add("PersonId", SqlDbType.Int);
@@ -40,7 +40,7 @@ namespace CIS_560_Proj.Person_Delegates
 
         public override Person Translate(SqlCommand command)
         {
-            return new Person(personId, Name, DOB, Death);
+            return new Person(personId, Name, DOB, Death, "NULL");
         }
 
     }
@@ -53,7 +53,7 @@ namespace CIS_560_Proj.Person_Delegates
 
 
         public DeleateDelegate(int PersonId, string Name, string DOB, string Death)
-           : base("DeleatePerson")
+           : base("DeletePerson")
         {
             this.Name = Name;
             this.DOB = DOB;
@@ -65,13 +65,13 @@ namespace CIS_560_Proj.Person_Delegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("PersonId", SqlDbType.Int);
-            p.Value = personId;
+            var p = command.Parameters.Add("Name", SqlDbType.NVarChar);
+            p.Value = Name;
         }
 
         public override Person Translate(SqlCommand command)
         {
-            return new Person(personId, Name, DOB, Death, "Deleated");
+            return new Person(personId, Name, DOB, Death, "Deleted");
         }
 
     }

@@ -8,5 +8,6 @@ namespace CIS_560_Proj.Interface
         Sales FetchSales(int MovieId);
         Sales AddSales(int movieId, int domesticsales, int foreignsales);
         IReadOnlyList<Sales> RetrieveSales();
+        Sales DeleteSales(int MovieID);
     }
 }

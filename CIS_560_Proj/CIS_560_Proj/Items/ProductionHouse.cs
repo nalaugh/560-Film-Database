@@ -5,21 +5,16 @@
         public int ProductionId { get; }
         public string ProductionName { get; }
         public string Location { get; }
-        public string Deleated { get; }
+        public string Deleted { get; }
 
 
-        public ProductionHouse(int productionId, string productionname, string location)
+
+        public ProductionHouse(int productionId, string productionname, string location, string Deleted)
         {
             this.ProductionId = productionId;
             this.ProductionName = productionname;
             this.Location = location;
-        }
-        public ProductionHouse(int productionId, string productionname, string location, string Deleadted)
-        {
-            this.ProductionId = productionId;
-            this.ProductionName = productionname;
-            this.Location = location;
-            this.Deleated = Deleated;
+            this.Deleted = Deleted;
         }
     }
 }

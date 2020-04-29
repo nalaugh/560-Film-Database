@@ -6,7 +6,7 @@ namespace CIS_560_Proj.Interface
     public interface IProductionHouse
     {
 
-        IReadOnlyList<ProductionHouse> RetrieveProduction();
+        IReadOnlyList<ProductionHouse> RetrieveProduction2();
         IReadOnlyList<ProductionHouse> RetrieveProductionbyName(string name);
         /// <summary>
         /// Creates a new Production House
@@ -29,8 +29,8 @@ namespace CIS_560_Proj.Interface
 
         ProductionHouse UpdateProduction(string productionName, string location, int productionID);
 
-        ProductionHouse DeleateProductionHouse(string Name, string location, int pId);
-        IReadOnlyList<ProductionHouse> RetrieveProductionHouseDealeated();
+        ProductionHouse DeleteProduction(string Name, string location, int pId);
+
 
     }
 }

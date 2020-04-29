@@ -7,7 +7,7 @@ namespace CIS_560_Proj.Sales_Delegates
     internal class RetrieveDelegate : DataReaderDelegate<IReadOnlyList<Sales>>
     {
         public RetrieveDelegate()
-          : base("Film.RetrieveSales")
+          : base("RetrieveSales")
         {
         }
 
@@ -20,7 +20,8 @@ namespace CIS_560_Proj.Sales_Delegates
 
                 person.Add(new Sales(reader.GetInt32("MovieId"),
                reader.GetInt32("Domesticsales"),
-               reader.GetInt32("Foreignsales")));
+               reader.GetInt32("Foreignsales"),
+               "NULL"));
             }
 
             return person;

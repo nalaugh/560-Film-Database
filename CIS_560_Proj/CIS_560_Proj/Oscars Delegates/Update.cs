@@ -15,7 +15,7 @@ namespace CIS_560_Proj.Oscars_Delegates
 
 
         public UpdateDelegate(int OID, int IndividualAwardsWonId, int MovieAwardsWonId, int Year)
-           : base("CreateOscars")
+           : base("UpdateOscars")
         {
             this.individualawardswonId = IndividualAwardsWonId;
             this.movieawardswonId = MovieAwardsWonId;
@@ -43,7 +43,7 @@ namespace CIS_560_Proj.Oscars_Delegates
         public override Oscars Translate(SqlCommand command)
         {
             return new Oscars((int)command.Parameters["OscarId"].Value, (int)command.Parameters["IndividualAwardsWonId"].Value,
-                (int)command.Parameters["MovieAwardsWonId"].Value, (int)command.Parameters["Year"].Value);
+                (int)command.Parameters["MovieAwardsWonId"].Value, (int)command.Parameters["Year"].Value,"NULL");
         }
     }
     internal class DeleateDelegate : NonQueryDataDelegate<Oscars>
@@ -56,7 +56,7 @@ namespace CIS_560_Proj.Oscars_Delegates
 
 
         public DeleateDelegate(int OID,int IndividualAwardsWonId, int MovieAwardsWonId, int Year)
-           : base("CreateOscars")
+           : base("DeleteOscars")
         {
             this.individualawardswonId = IndividualAwardsWonId;
             this.movieawardswonId = MovieAwardsWonId;
@@ -84,7 +84,7 @@ namespace CIS_560_Proj.Oscars_Delegates
         public override Oscars Translate(SqlCommand command)
         {
             return new Oscars((int)command.Parameters["OscarId"].Value, (int)command.Parameters["IndividualAwardsWonId"].Value,
-                (int)command.Parameters["MovieAwardsWonId"].Value, (int)command.Parameters["Year"].Value, "Deleated");
+                (int)command.Parameters["MovieAwardsWonId"].Value, (int)command.Parameters["Year"].Value, "Deleted");
         }
     }
 }

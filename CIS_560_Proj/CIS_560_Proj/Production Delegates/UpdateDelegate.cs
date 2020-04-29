@@ -19,7 +19,7 @@ namespace CIS_560_Proj.Production_Delegates
 
 
         public UpdateDelegate(string Name, string location, int pId)
-           : base("AddProductionHouse")
+           : base("UpdateProduction")
         {
             this.Name = Name;
             this.location = location;
@@ -31,27 +31,25 @@ namespace CIS_560_Proj.Production_Delegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("ProductionName", SqlDbType.NVarChar);
+
+            var p = command.Parameters.Add("Name", SqlDbType.NVarChar);
             p.Value = Name;
-
-            p = command.Parameters.Add("Location", SqlDbType.NVarChar);
+             p = command.Parameters.Add("Location", SqlDbType.NVarChar);
             p.Value = location;
-
-            p = command.Parameters.Add("ProductionId", SqlDbType.Int);
+             p = command.Parameters.Add("ProductionId", SqlDbType.Int);
             p.Value = pId;
         }
 
 
-
-
         public override ProductionHouse Translate(SqlCommand command, IDataRowReader reader)///may need to overide
         {
-            if (!reader.Read())
-                throw new RecordNotFoundException(pId.ToString());
+            //if (!reader.Read())
+            ///    throw new RecordNotFoundException(pId);
 
             return new ProductionHouse(pId,
-               reader.GetString("ProductionName"),
-               reader.GetString("Location"));
+               Name,
+               location, 
+               "Deleted");
         }
     }
 
@@ -63,7 +61,7 @@ namespace CIS_560_Proj.Production_Delegates
 
 
         public DeleateDelegate(string Name, string location, int pId)
-           : base("DeleateProductionHouse")
+           : base("DeleteProduction")
         {
             this.Name = Name;
             this.location = location;
@@ -76,21 +74,18 @@ namespace CIS_560_Proj.Production_Delegates
             base.PrepareCommand(command);
 
 
-           var  p = command.Parameters.Add("ProductionId", SqlDbType.Int);
-            p.Value = pId;
+           var  p = command.Parameters.Add("Name", SqlDbType.NVarChar);
+            p.Value = Name;
         }
 
 
 
 
-        public override ProductionHouse Translate(SqlCommand command, IDataRowReader reader)///may need to overide
+        public override ProductionHouse Translate(SqlCommand command, IDataRowReader reader)
         {
-            if (!reader.Read())
-                throw new RecordNotFoundException(pId.ToString());
 
-            return new ProductionHouse(pId,
-               reader.GetString("ProductionName"),
-               reader.GetString("Location"), "Deleated");
+            return new ProductionHouse(pId, Name, location, "Delete");
+
         }
     }
 }

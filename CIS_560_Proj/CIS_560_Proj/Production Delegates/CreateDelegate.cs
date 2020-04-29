@@ -21,6 +21,8 @@ namespace CIS_560_Proj.Production_Delegates
         {
             base.PrepareCommand(command);
 
+         
+
             var p = command.Parameters.Add("ProductionName", SqlDbType.NVarChar);
             p.Value = Name;
 
@@ -34,7 +36,7 @@ namespace CIS_560_Proj.Production_Delegates
 
         public override ProductionHouse Translate(SqlCommand command)
         {
-            return new ProductionHouse((int)command.Parameters["ProductionId"].Value, Name, location);
+            return new ProductionHouse((int)command.Parameters["ProductionId"].Value, Name, location, "Null");
         }
 
     }

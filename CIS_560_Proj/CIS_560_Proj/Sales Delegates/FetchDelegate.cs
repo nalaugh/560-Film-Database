@@ -14,7 +14,7 @@ namespace CIS_560_Proj.Sales_Delegates
             this.movieId = movieId;
         }
 
-        public override void PrepareCommand(SqlCommand command)///may need to overide
+        public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
 
@@ -22,14 +22,15 @@ namespace CIS_560_Proj.Sales_Delegates
             p.Value = movieId;
         }
 
-        public override Sales Translate(SqlCommand command, IDataRowReader reader)///may need to overide
+        public override Sales Translate(SqlCommand command, IDataRowReader reader)
         {
             if (!reader.Read())
                 throw new RecordNotFoundException(movieId.ToString());
 
             return new Sales(movieId,
                reader.GetInt32("Domesticsales"),
-               reader.GetInt32("Foreignsales")
+               reader.GetInt32("Foreignsales"),
+               "NULL"
              );
         }
     }

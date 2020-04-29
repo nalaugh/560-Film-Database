@@ -37,7 +37,7 @@ namespace CIS_560_Proj.Person_Delegates
 
         public override Person Translate(SqlCommand command)
         {
-            return new Person((int)command.Parameters["PersonId"].Value, Name, DOB, Death);
+            return new Person((int)command.Parameters["PersonId"].Value, Name, DOB, Death,"NULL");
         }
 
     }

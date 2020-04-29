@@ -38,7 +38,7 @@ namespace CIS_560_Proj.Sales_Delegates
 
         public override Sales Translate(SqlCommand command)
         {
-            return new Sales(Convert.ToInt32(movieId), Convert.ToInt32(domesticsales), Convert.ToInt32(foreignsales));
+            return new Sales(Convert.ToInt32(movieId), Convert.ToInt32(domesticsales), Convert.ToInt32(foreignsales), "NULL");
         }
     }
 }

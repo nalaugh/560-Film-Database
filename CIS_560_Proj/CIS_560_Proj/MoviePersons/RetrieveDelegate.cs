@@ -7,7 +7,7 @@ namespace CIS_560_Proj.MoviePersons
     internal class RetrieveDelegate : DataReaderDelegate<IReadOnlyList<MoviePerson>>
     {
         public RetrieveDelegate()
-         : base("Film.RetrieveMoviePerson")
+         : base("RetrieveMoviePerson")
         {
         }
 

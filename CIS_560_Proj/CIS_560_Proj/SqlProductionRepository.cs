@@ -41,7 +41,7 @@ namespace CIS_560_Proj
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyList<ProductionHouse> RetrieveProduction()
+        public IReadOnlyList<ProductionHouse> RetrieveProduction2()
         {
             return executor.ExecuteReader(new RetrieveDelegate());
         }
@@ -51,10 +51,7 @@ namespace CIS_560_Proj
             return executor.ExecuteReader(new RetrieveDelegateName(Name));
         }
 
-        public IReadOnlyList<ProductionHouse> RetrieveProductionHouseDealeated()
-        {
-            return executor.ExecuteReader(new RetrieveDelegateDeleated());
-        }
+     
 
         public ProductionHouse UpdateProduction (string productionName, string location, int productionID)
         {
@@ -62,7 +59,7 @@ namespace CIS_560_Proj
             return executor.ExecuteReader(d);
         }
 
-        public ProductionHouse DeleateProductionHouse(string Name, string location, int pId)
+        public ProductionHouse DeleteProduction(string Name, string location, int pId)
         {
             return executor.ExecuteReader(new DeleateDelegate(Name, location, pId));
         }

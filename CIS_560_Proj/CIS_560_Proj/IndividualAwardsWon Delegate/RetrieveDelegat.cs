@@ -6,7 +6,7 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
     internal class RetrieveDelegat : DataReaderDelegate<IReadOnlyList<IndividualAwardsWon>>
     {
         public RetrieveDelegat()
-         : base("Film.RetrieveIndividualAwardsWon")
+         : base("RetrieveIndividualAwardsWon")
         {
         }
 
@@ -18,7 +18,7 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
             {
 
                 Movie.Add(new IndividualAwardsWon(reader.GetInt32("IndividualAwardsWonId"),
-               reader.GetInt32("MoviePersonId")
+               reader.GetInt32("MoviePersonId"), reader.GetString("IsDeleated")
 
                ));
             }

@@ -27,7 +27,7 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
                 return null;
 
             return new IndividualAwardsWon(reader.GetInt32("IndividualAwardsWonId"),
-               reader.GetInt32("MoviePersonId")
+               reader.GetInt32("MoviePersonId"), reader.GetString("IsDeleated")
                 );
         }
     }

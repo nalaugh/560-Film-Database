@@ -6,22 +6,16 @@
         public int IndividualAwardsWonId { get; }
         public int MovieAwardsWonId { get; }
         public int Year { get; }
-        public string Deleated { get; }
+        public string Deleted { get; }
 
-        public Oscars(int oscarsId, int individualawardswon, int movieawardswon, int year)
-        {
-            this.OscarsId = oscarsId;
-            this.IndividualAwardsWonId = individualawardswon;
-            this.MovieAwardsWonId = movieawardswon;
-            this.Year = year;
-        }
+
         public Oscars(int oscarsId, int individualawardswon, int movieawardswon, int year, string Del)
         {
             this.OscarsId = oscarsId;
             this.IndividualAwardsWonId = individualawardswon;
             this.MovieAwardsWonId = movieawardswon;
             this.Year = year;
-            this.Deleated = Del;
+            this.Deleted = Del;
         }
 
 

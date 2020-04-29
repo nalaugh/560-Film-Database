@@ -10,35 +10,20 @@ namespace CIS_560_Proj
     {
         private IProductionHouse repo;
         private IMovie movierepo;
+        private Isales sales;
 
         public Add()
         {
             InitializeComponent();
-            this.listBoxOptoins.Items.Add("Actor");
-            this.listBoxOptoins.Items.Add("Director");
-            this.uxButtonInsertMovie.Enabled = true;
-        }
-
-        private void uxButtonInsertMovie_Click(object sender, EventArgs e)
-        {
-            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-              "Initial Catalog=phyo;" +
-              "User id=phyo;" +
-              "Password=zinrocks@4321;");
-            var production = repo.GetProductionHouse(this.uxProductionName.Text);
-
-            int pID = Convert.ToInt32(production.ProductionId.ToString());
-            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
-              "Initial Catalog=phyo;" +
-              "User id=phyo;" +
-              "Password=zinrocks@4321;");
-            movierepo.CreateMovie(pID.ToString(), uxTextBoxMovieTitle.Text, dateTimePicker1.Value.Date.ToString());
-
-
+            this.uxInsertButton.Enabled = true;
+            this.uxViewMovies.Enabled = true;
+            this.uxDeleteMovie.Enabled = true;
             
-
         }
 
+
+        private int MovieId;
+        private int ProductionId;
 
         /// <summary>
         /// Uses GetProductionHouse Procedure to retrieve ProductionID 
@@ -73,32 +58,19 @@ namespace CIS_560_Proj
 
         }
 
-        /// <summary>
-        /// Displays the data everytime insert is pressed 
-        /// </summary>
-        public void display_data()
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString =
-              "Data Source=mssql.cs.ksu.edu;" +
-              "Initial Catalog=phyo;" +
-              "User id=phyo;" +
-              "Password=zinrocks@4321;";
-
-            connection.Open();
-            SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * From Film.Movie";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            connection.Close();
-        }
+      
         private void uxViewMovies_Click(object sender, EventArgs e)
         {
-            display_data();
+            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
+                    "Initial Catalog=phyo;" +
+                    "User id=phyo;" +
+                    "Password=zinrocks@4321;");
+            sales = new SqlSalesRepository("Data Source=mssql.cs.ksu.edu;" +
+                    "Initial Catalog=phyo;" +
+                    "User id=phyo;" +
+                    "Password=zinrocks@4321;");
+            dataGridView1.DataSource = movierepo.RetrieveMovie();
+            dataGridView3.DataSource = sales.RetrieveSales();
         }
 
         private void uxDeleteMovie_Click(object sender, EventArgs e)
@@ -108,11 +80,54 @@ namespace CIS_560_Proj
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
                      "Password=zinrocks@4321;");
+            sales = new SqlSalesRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            
+            var createdPH = movierepo.DeleteMovie(MovieId, ProductionId, uxTextBoxMovieTitle.Text, date);
+            //MessageBox.Show("past");
+            var b = sales.DeleteSales(MovieId);
 
-            var id = movierepo.GetMovie(uxTextBoxMovieTitle.ToString());
-            var createdPH = movierepo.DeleateMovie(id.MovieId, id.ProductionId.ToString(), id.MovieName, id.ReleaseDate);
+            dataGridView1.DataSource = movierepo.RetrieveMovie();
+            dataGridView3.DataSource = sales.RetrieveSales();
+        }
 
-            dataGridView1.DataSource = movierepo.RetrieveMovieDealeated();
+        private void uxInsertButton_Click_1(object sender, EventArgs e)
+        {
+            sales = new SqlSalesRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
+              "Initial Catalog=phyo;" +
+              "User id=phyo;" +
+              "Password=zinrocks@4321;");
+            var production = repo.GetProductionHouse(this.uxProductionName.Text);
+
+            int pID = Convert.ToInt32(production.ProductionId.ToString());
+            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
+              "Initial Catalog=phyo;" +
+              "User id=phyo;" +
+              "Password=zinrocks@4321;");
+            var date = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+            movierepo.CreateMovie(pID, uxTextBoxMovieTitle.Text,date);
+
+
+            dataGridView1.DataSource = movierepo.RetrieveMovie();
+            dataGridView3.DataSource = sales.RetrieveSales();
+
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            MovieId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            ProductionId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+            uxTextBoxMovieTitle.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            uxProductionName.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            uxInsertButton.Text = "Update";
         }
     }
 }

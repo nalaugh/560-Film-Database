@@ -3,22 +3,25 @@ using System.Windows.Forms;
 using CIS_560_Proj.Interface;
 using CIS_560_Proj;
 using System.Collections.Generic;
+using CIS_560_Proj.Items;
 
 namespace CIS_560_Proj
 {
     public partial class Awards : UserControl
     {
         private IIndividualAwardsWon Inrepo;
-        private IMovieAwardsWon movie;
+        private IMovieAwardsWon movieAwardsWon;
         private IOscars oscarsrepo;
         private IMoviePerson personrepo;
         private IPerson person;
+        private IMovie movieCategory;
         public Awards()
         {
             InitializeComponent();
             this.listBox1.Items.Add("Indiviual Awards");
             this.listBox1.Items.Add("Movie Awards");
             this.uxButtonInsertMovie.Enabled = true;
+            this.uxSearchProduction.Enabled = true;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,10 +38,11 @@ namespace CIS_560_Proj
             if (listBox1.SelectedItem.Equals("Movie Awards"))
             {
                 this.listBox2.Items.Clear();
-                this.listBox2.Items.Add("Best Pricture");
+                this.listBox2.Items.Add("Best Picture");
                 this.listBox2.Items.Add("Adapted Screenplay");
                 this.listBox2.Items.Add("Original Screenplay");
             }
+            this.uxSearchProduction.Enabled = true;
         }
 
         private void uxButtonAddMovie_Click(object sender, EventArgs e)
@@ -83,37 +87,80 @@ namespace CIS_560_Proj
                      "Password=zinrocks@4321;");
             var id = oscarsrepo.GetOscars(Convert.ToInt32(uxNumericUpDownYear.Value));
             var createdPH = oscarsrepo.DeleateOscars(id.OscarsId, id.IndividualAwardsWonId, id.MovieAwardsWonId, id.Year);
-            dataGridView1.DataSource = oscarsrepo.RetrieveOscarsDealeated();
+            dataGridView1.DataSource = oscarsrepo.RetrieveOscars();
         }
 
 
         private void uxSearchProduction_Click(object sender, EventArgs e)
         {
-            oscarsrepo = new SqlOscarsRepository("Data Source=mssql.cs.ksu.edu;" +
+
+            personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
                      "Password=zinrocks@4321;");
-            Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
-            movie = new SqlMovieAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+            person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
                      "Password=zinrocks@4321;");
 
-            var id = oscarsrepo.GetOscars(Convert.ToInt32(uxNumericUpDownYear.Value));
-            List<object> list = new List<object>();
-            foreach(object i in Inrepo.RetrieveIndividualAwardsWon())
+            movieAwardsWon = new SqlMovieAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+            movieCategory = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=phyo;" +
+                     "Password=zinrocks@4321;");
+
+            List<Movie> won = new List<Movie>();
+            if (this.listBox2.SelectedItem.Equals("Best Picture"))
             {
-                list.Add(i);
-            }
-            foreach (object i in movie.RetrieveMovieAwardsWon())
-            {
-                list.Add(i);
+                foreach(MovieAwardsWon i in movieAwardsWon.RetrieveMovieAwardsWon())
+                {
+                    if (i.Category.Equals("Adapted Screenplay"))
+                    {
+                        Movie a = movieCategory.FetchMovie(i.MovieId);
+                        won.Add(a);
+                    }
+                }
+                dataGridView1.DataSource = won;
             }
 
-            dataGridView1.DataSource = list;
+
+            List<Person> won1 = new List<Person>();
+            if (this.listBox2.SelectedItem.Equals("Director"))
+            {
+               
+                foreach(MoviePerson i in personrepo.RetrieveMoviePerson())
+                {
+                    if (i.Role.Equals("Director"))
+                    {
+                        Person a = person.FetchPerson(i.PersonId);
+                        won1.Add(a);
+                    }
+                }
+                dataGridView1.DataSource = won1;
+
+            }
+            if (this.listBox2.SelectedItem.Equals("Adapted Screenplay"))
+            { 
+                foreach(MovieAwardsWon i in movieAwardsWon.RetrieveMovieAwardsWon())
+                {
+                    if(i.Category.Equals("Adapted Screenplay"))
+                    {
+                        Movie a = movieCategory.FetchMovie(i.MovieId);
+                            won.Add(a);
+                    }
+
+                }
+                dataGridView1.DataSource = won;
+
+
+            }
+
+
+
+              
         }
     }
 }

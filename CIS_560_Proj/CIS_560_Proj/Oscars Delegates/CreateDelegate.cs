@@ -39,7 +39,7 @@ namespace CIS_560_Proj.Oscars_Delegates
 
         public override Oscars Translate(SqlCommand command)
         {
-            return new Oscars((int)command.Parameters["OscarId"].Value, individualawardswonId, movieawardswonId,year);
+            return new Oscars((int)command.Parameters["OscarId"].Value, individualawardswonId, movieawardswonId,year, "NULL");
         }
     }
 }

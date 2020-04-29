@@ -42,7 +42,7 @@ namespace CIS_560_Proj
 
         public IReadOnlyList<MoviePerson> RetrieveMoviePerson()
         {
-            throw new NotImplementedException();
+            return executor.ExecuteReader(new RetrieveDelegate());
         }
     }
 }

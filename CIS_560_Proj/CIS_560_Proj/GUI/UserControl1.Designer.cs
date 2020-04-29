@@ -59,5 +59,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button uxViewButton;
+        private System.Windows.Forms.TextBox uxSearchBox;
+        private System.Windows.Forms.Button Deleate;
     }
 }

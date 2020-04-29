@@ -8,7 +8,7 @@ namespace CIS_560_Proj.Movie_Delegates
     internal class RetrieveDelegate : DataReaderDelegate<IReadOnlyList<Movie>>
     {
         public RetrieveDelegate()
-          : base("Film.RetrieveMovie")
+          : base("RetrieveMovie")
         {
         }
 
@@ -22,7 +22,8 @@ namespace CIS_560_Proj.Movie_Delegates
                 Movie.Add(new Movie(Convert.ToInt32(reader.GetInt32("MovieId")),
                reader.GetInt32("ProductionId"),
                 reader.GetString("MovieName"),
-               reader.GetString("ReleasDate")));
+                reader.GetString("ReleaseDate"),
+               reader.GetString("IsDeleted")));
             }
 
             return Movie;
@@ -31,7 +32,7 @@ namespace CIS_560_Proj.Movie_Delegates
     internal class RetrieveDelegateDeleated : DataReaderDelegate<IReadOnlyList<Movie>>
     {
         public RetrieveDelegateDeleated()
-          : base("Film.RetrieveMovieDeleated")
+          : base("RetrieveMovieDeleated")
         {
         }
 
@@ -45,8 +46,8 @@ namespace CIS_560_Proj.Movie_Delegates
                 Movie.Add(new Movie(Convert.ToInt32(reader.GetInt32("MovieId")),
                reader.GetInt32("ProductionId"),
                 reader.GetString("MovieName"),
-               reader.GetString("ReleasDate"),
-               reader.GetString("IsDeleated")));
+               "NULL",
+              "NULL"));
             }
 
             return Movie;

@@ -42,10 +42,10 @@ namespace CIS_560_Proj.Interface
         /// <returns>
         /// The resulting instance of <see cref="Person"/>.
         /// </returns>
-        Movie CreateMovie(string ProductionId, string MovieName, string ReleaseDate);
+        Movie CreateMovie(int ProductionId, string MovieName, string ReleaseDate);
 
         Movie UpdateMovie(int Movie, string ProductionId, string MovieName, string ReleaseDate);
-        Movie DeleateMovie(int id, string pid, string name, string release);
+        Movie DeleteMovie(int id, int pid, string name, string release);
         IReadOnlyList<Movie> RetrieveMovieDealeated();
 
     }

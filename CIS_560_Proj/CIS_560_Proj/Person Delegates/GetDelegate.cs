@@ -29,7 +29,7 @@ namespace CIS_560_Proj.Person_Delegates
             return new Person(reader.GetInt32("PersonId"),
                Name,
                reader.GetString("DOB"),
-               reader.GetString("DeathDate"));
+               reader.GetString("DeathDate"), "NULL");
         }
     }
 }
