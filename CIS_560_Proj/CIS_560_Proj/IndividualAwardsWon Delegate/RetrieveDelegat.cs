@@ -18,7 +18,7 @@ namespace CIS_560_Proj.IndividualAwardsWon_Delegate
             {
 
                 Movie.Add(new IndividualAwardsWon(reader.GetInt32("IndividualAwardsWonId"),
-               reader.GetInt32("MoviePersonId"), reader.GetString("IsDeleated")
+               reader.GetInt32("MoviePersonId"), reader.GetString("IsDeleted")
 
                ));
             }

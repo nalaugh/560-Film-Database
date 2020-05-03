@@ -49,19 +49,19 @@ namespace CIS_560_Proj
         {
              Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
-             "User id=phyo;" +
-            "Password=zinrocks@432;");
+             "User id=UserId;" +
+            "Password=Password;");
 
             person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
-             "User id=phyo;" +
-            "Password=zinrocks@432;");
+             "User id=UserId;" +
+            "Password=Password;");
             //person.GetPerson()
 
             personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
-             "User id=phyo;" +
-            "Password=zinrocks@432;");
+             "User id=UserId;" +
+            "Password=Password;");
 
             personrepo.RetrieveMoviePerson();
 
@@ -87,28 +87,32 @@ namespace CIS_560_Proj
 
             personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@432;");
+                     "User id=UserId;" +
+                     "Password=Password;");
             person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@432;");
+                     "User id=UserId;" +
+                     "Password=Password;");
 
             movieAwardsWon = new SqlMovieAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@432;");
+                     "User id=UserId;" +
+                     "Password=Password;");
             movieCategory = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@432;");
+                     "User id=UserId;" +
+                     "Password=Password;");
+            Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
+                     "Initial Catalog=phyo;" +
+                     "User id=UserId;" +
+                     "Password=Password;");
 
             List<Movie> won = new List<Movie>();
             if (this.listBox2.SelectedItem.Equals("Best Picture"))
             {
                 foreach(MovieAwardsWon i in movieAwardsWon.RetrieveMovieAwardsWon())
                 {
-                    if (i.Category.Equals("Adapted Screenplay"))
+                    if (i.Category.Equals("Best Picture"))
                     {
                         Movie a = movieCategory.FetchMovie(i.MovieId);
                         won.Add(a);
@@ -122,15 +126,17 @@ namespace CIS_560_Proj
             if (this.listBox2.SelectedItem.Equals("Director"))
             {
                
-                foreach(MoviePerson i in personrepo.RetrieveMoviePerson())
+                foreach(IndividualAwardsWon i in Inrepo.RetrieveIndividualAwardsWon())
                 {
-                    if (i.Role.Equals("Director"))
+                    MoviePerson a = personrepo.FetchMoviePerson(i.MoviePersonId);
+                    if (a.Role.Equals("Director"))
                     {
-                        Person a = person.FetchPerson(i.PersonId);
-                        won1.Add(a);
+                        Person b = person.FetchPerson(a.PersonId);
+                        won1.Add(b);
                     }
                 }
                 dataGridView1.DataSource = won1;
+                
 
             }
             if (this.listBox2.SelectedItem.Equals("Adapted Screenplay"))

@@ -23,8 +23,8 @@ namespace CIS_560_Proj.GUI
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                     "Initial Catalog=phyo;" +
-                    "User id=username;" +
-                    "Password=password;");
+                    "User id=phyo;" +
+                    "Password=zinrocks@432;");
 
             string name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
@@ -70,8 +70,8 @@ namespace CIS_560_Proj.GUI
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                     "Initial Catalog=phyo;" +
-                    "User id=username;" +
-                    "Password=password;");
+                    "User id=phyo;" +
+                    "Password=zinrocks@432;");
 
             var name = uxSearchBox.Text;
             //Retrieve person by name 
@@ -85,8 +85,8 @@ namespace CIS_560_Proj.GUI
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                     "Initial Catalog=phyo;" +
-                    "User id=username;" +
-                    "Password=password;");
+                    "User id=phyo;" +
+                    "Password=zinrocks@432;");
 
             dataGridView1.DataSource = repo.RetrievePersons();
 
@@ -109,8 +109,8 @@ namespace CIS_560_Proj.GUI
         {
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                     "Initial Catalog=phyo;" +
-                    "User id=username;" +
-                    "Password=password;");
+                    "User id=phyo;" +
+                    "Password=zinrocks@432;");
             var name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
 

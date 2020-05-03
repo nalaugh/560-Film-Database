@@ -32,7 +32,8 @@ namespace CIS_560_Proj
 
         public MoviePerson FetchMoviePerson(int personId)
         {
-            throw new NotImplementedException();
+            var d = new FetchDelegate(personId);
+            return executor.ExecuteReader(d);
         }
 
         public MoviePerson GetMoviePerson(string name)
