@@ -34,13 +34,15 @@
             this.uxLabelProductionName = new System.Windows.Forms.Label();
             this.uxButtonInsertProduction = new System.Windows.Forms.Button();
             this.uxDelete = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxProductionName
             // 
             this.uxProductionName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxProductionName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxProductionName.Location = new System.Drawing.Point(255, 79);
+            this.uxProductionName.Location = new System.Drawing.Point(250, 91);
             this.uxProductionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxProductionName.Multiline = true;
             this.uxProductionName.Name = "uxProductionName";
@@ -79,7 +81,7 @@
             this.uxLabelProductionName.BackColor = System.Drawing.Color.White;
             this.uxLabelProductionName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxLabelProductionName.ForeColor = System.Drawing.Color.Black;
-            this.uxLabelProductionName.Location = new System.Drawing.Point(13, 79);
+            this.uxLabelProductionName.Location = new System.Drawing.Point(13, 91);
             this.uxLabelProductionName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxLabelProductionName.Name = "uxLabelProductionName";
             this.uxLabelProductionName.Size = new System.Drawing.Size(224, 32);
@@ -114,11 +116,32 @@
             this.uxDelete.UseVisualStyleBackColor = true;
             this.uxDelete.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(65, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(426, 20);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Please fill out the information below to add NEW production";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(166, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 20);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "The production does not exist.";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 359);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.uxDelete);
             this.Controls.Add(this.uxButtonInsertProduction);
             this.Controls.Add(this.uxProductionName);
@@ -140,5 +163,7 @@
         private System.Windows.Forms.Label uxLabelProductionName;
         private System.Windows.Forms.Button uxButtonInsertProduction;
         private System.Windows.Forms.Button uxDelete;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

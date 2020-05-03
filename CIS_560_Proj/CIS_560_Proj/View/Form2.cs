@@ -69,5 +69,10 @@ namespace CIS_560_Proj.View
         {
             Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
