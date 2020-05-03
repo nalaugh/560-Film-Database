@@ -6,7 +6,7 @@ namespace CIS_560_Proj.Production_Delegates
     internal class GetDelegate : DataReaderDelegate<ProductionHouse>
     {
         private readonly string Name;
-
+         
         public GetDelegate(string name)
            : base("GetProductionHouseName")
         {

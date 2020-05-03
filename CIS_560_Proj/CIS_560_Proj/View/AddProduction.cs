@@ -18,7 +18,7 @@ namespace CIS_560_Proj.GUI
             InitializeComponent();
             uxButtonInsertProduction.Enabled = true;
             uxSearchProduction.Enabled = true;
-            uxDeleteProduction.Enabled = true;
+            uxDeleteProduction.Enabled = false;
             uxViewButton.Enabled = true;
 
         }
@@ -27,9 +27,9 @@ namespace CIS_560_Proj.GUI
         {
            
                 repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
             if (uxButtonInsertProduction.Text == "Insert")
             {
                 var name = uxProductionName.Text;
@@ -74,9 +74,9 @@ namespace CIS_560_Proj.GUI
         private void uxViewMovies_Click(object sender, EventArgs e)
         {
             repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-                "Initial Catalog=phyo;" +
-                "User id=phyo;" +
-                "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
             string Name = uxSearchTextBox.Text;
             dataGridView1.DataSource = null;
 
@@ -91,13 +91,13 @@ namespace CIS_560_Proj.GUI
         private void uxDeleteProduction_Click(object sender, EventArgs e)
         {
             repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
             var id = repo.GetProductionHouse(uxProductionName.Text);
             var createdPH = repo.DeleteProduction(uxProductionName.Text, uxProductionLocation.Text, id.ProductionId);
-            MessageBox.Show("Deleted");
-            //fix 
+            MessageBox.Show("Production sucessfully deleted.");
+
             dataGridView1.DataSource = null;
 
             dataGridView1.DataSource = repo.RetrieveProduction2();
@@ -106,9 +106,9 @@ namespace CIS_560_Proj.GUI
         private void uxViewButton_Click(object sender, EventArgs e)
         {
             repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.DataSource = repo.RetrieveProduction2();
@@ -121,6 +121,7 @@ namespace CIS_560_Proj.GUI
             //Check to see if the row clicked is inside the grid
             if (dataGridView1.CurrentRow.Index != -1)
             {
+                uxDeleteProduction.Enabled = true;
                 ProductionId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 uxProductionName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 uxProductionLocation.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();

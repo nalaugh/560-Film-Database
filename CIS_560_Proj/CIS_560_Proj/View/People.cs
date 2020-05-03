@@ -22,9 +22,9 @@ namespace CIS_560_Proj.GUI
         {
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
-                 "Initial Catalog=phyo;" +
-                 "User id=phyo;" +
-                 "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
 
             string name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
@@ -69,9 +69,9 @@ namespace CIS_560_Proj.GUI
         {
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
-            "Initial Catalog=phyo;" +
-            "User id=phyo;" +
-            "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
 
             var name = uxSearchBox.Text;
             //Retrieve person by name 
@@ -84,9 +84,9 @@ namespace CIS_560_Proj.GUI
         {
 
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
 
             dataGridView1.DataSource = repo.RetrievePersons();
 
@@ -94,11 +94,14 @@ namespace CIS_560_Proj.GUI
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            PersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            uxPersonName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            uxInsertButton.Text = "Update";
-            uxDeleteButton.Enabled = true;
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                PersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                uxPersonName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                uxInsertButton.Text = "Update";
+                uxDeleteButton.Enabled = true;
+            }
            
         }
 
@@ -106,8 +109,8 @@ namespace CIS_560_Proj.GUI
         {
             repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                     "Initial Catalog=phyo;" +
-                    "User id=phyo;" +
-                    "Password=zinrocks@4321;");
+                    "User id=username;" +
+                    "Password=password;");
             var name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
 
@@ -119,6 +122,8 @@ namespace CIS_560_Proj.GUI
 
             var id = repo.FetchPerson(PersonId);
             var createdPH = repo.DeleatePerson(PersonId, name, DOB, death);
+
+            MessageBox.Show("Person sucessfully deleted.");
 
             dataGridView1.DataSource = repo.RetrievePersons();
 

@@ -20,8 +20,8 @@ namespace CIS_560_Proj.Person_Delegates
             {
                 person.Add(new Person(reader.GetInt32("PersonId"),
                                    reader.GetString("Name"),
-                                   reader.GetString("DOB"), "NULL",
-                                   //,reader.GetString("DeathDate")
+                                   reader.GetString("DOB"), 
+                                   reader.GetString("DeathDate"),
                                    reader.GetString("IsDeleted")
                                    )
                                         ); 
@@ -58,8 +58,8 @@ namespace CIS_560_Proj.Person_Delegates
             {
                 person.Add(new Person(reader.GetInt32("PersonId"),
                     reader.GetString("Name"),
-                    reader.GetString("DOB"), "NULL",
-                    //,reader.GetString("DeathDate")
+                    reader.GetString("DOB"), 
+                    reader.GetString("DeathDate"),
                     reader.GetString("IsDeleted")
                     )
                          ); 
@@ -78,25 +78,22 @@ namespace CIS_560_Proj.Person_Delegates
             {
 
             }
-            public override IReadOnlyList<Person> Translate(SqlCommand command, IDataRowReader reader)
+        public override IReadOnlyList<Person> Translate(SqlCommand command, IDataRowReader reader)
+        {
+            var Person = new List<Person>();
+
+            while (reader.Read())
             {
-                var person = new List<Person>();
 
-                while (reader.Read())
-                {
-
-                    person.Add(new Person(reader.GetInt32("PersonId"),
-                   reader.GetString("Name"),
-                   reader.GetString("DOB"), "NULL",
-                   //,reader.GetString("DeathDate")
-                   reader.GetString("IsDeleted")
-                   )
-                        ); 
-
-                }
-
-                return person;
+                Person.Add(new Person(Convert.ToInt32(reader.GetInt32("PersonId")),
+               reader.GetString("Name"),
+                reader.GetString("DOB"),
+                reader.GetString("DeathDate"),
+               reader.GetString("IsDeleted")));
             }
+
+            return Person;
         }
+    }
     
 }

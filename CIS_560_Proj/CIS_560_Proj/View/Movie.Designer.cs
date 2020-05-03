@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.uxSearchTextBox = new System.Windows.Forms.TextBox();
             this.uxSearchButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -168,11 +169,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(739, 173);
+            this.dataGridView1.Location = new System.Drawing.Point(773, 202);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 236);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -194,7 +195,7 @@
             // 
             this.uxProductionName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxProductionName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxProductionName.Location = new System.Drawing.Point(342, 285);
+            this.uxProductionName.Location = new System.Drawing.Point(340, 285);
             this.uxProductionName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxProductionName.Multiline = true;
             this.uxProductionName.Name = "uxProductionName";
@@ -204,11 +205,11 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(739, 441);
+            this.dataGridView3.Location = new System.Drawing.Point(773, 457);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(642, 256);
+            this.dataGridView3.Size = new System.Drawing.Size(642, 240);
             this.dataGridView3.TabIndex = 29;
             // 
             // label3
@@ -229,7 +230,7 @@
             // 
             this.uxSearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxSearchTextBox.Location = new System.Drawing.Point(739, 100);
+            this.uxSearchTextBox.Location = new System.Drawing.Point(773, 130);
             this.uxSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxSearchTextBox.Multiline = true;
             this.uxSearchTextBox.Name = "uxSearchTextBox";
@@ -241,7 +242,7 @@
             this.uxSearchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchButton.Enabled = false;
             this.uxSearchButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSearchButton.Location = new System.Drawing.Point(1204, 89);
+            this.uxSearchButton.Location = new System.Drawing.Point(1238, 119);
             this.uxSearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxSearchButton.Name = "uxSearchButton";
             this.uxSearchButton.Size = new System.Drawing.Size(177, 64);
@@ -249,12 +250,23 @@
             this.uxSearchButton.Text = "Search";
             this.uxSearchButton.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(777, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 32);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Search by Movie Name:";
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.uxSearchButton);
             this.Controls.Add(this.uxSearchTextBox);
             this.Controls.Add(this.label3);
@@ -299,5 +311,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox uxSearchTextBox;
         private System.Windows.Forms.Button uxSearchButton;
+        private System.Windows.Forms.Label label1;
     }
 }

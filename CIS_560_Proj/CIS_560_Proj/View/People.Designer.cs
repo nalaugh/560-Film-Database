@@ -41,6 +41,7 @@
             this.uxSearchBox = new System.Windows.Forms.TextBox();
             this.uxDeleteButton = new System.Windows.Forms.Button();
             this.uxViewButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +138,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(704, 170);
+            this.dataGridView1.Location = new System.Drawing.Point(704, 208);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -148,7 +149,7 @@
             // uxSearchButton
             // 
             this.uxSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxSearchButton.Location = new System.Drawing.Point(1210, 94);
+            this.uxSearchButton.Location = new System.Drawing.Point(1210, 129);
             this.uxSearchButton.Name = "uxSearchButton";
             this.uxSearchButton.Size = new System.Drawing.Size(147, 58);
             this.uxSearchButton.TabIndex = 20;
@@ -160,7 +161,7 @@
             // 
             this.uxSearchBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxSearchBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.uxSearchBox.Location = new System.Drawing.Point(704, 98);
+            this.uxSearchBox.Location = new System.Drawing.Point(704, 135);
             this.uxSearchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uxSearchBox.Multiline = true;
             this.uxSearchBox.Name = "uxSearchBox";
@@ -189,10 +190,21 @@
             this.uxViewButton.UseVisualStyleBackColor = true;
             this.uxViewButton.Click += new System.EventHandler(this.uxViewButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(707, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Search by Name:";
+            // 
             // People
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.uxViewButton);
             this.Controls.Add(this.uxDeleteButton);
             this.Controls.Add(this.uxSearchBox);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.TextBox uxSearchBox;
         private System.Windows.Forms.Button uxDeleteButton;
         private System.Windows.Forms.Button uxViewButton;
+        private System.Windows.Forms.Label label2;
     }
 }

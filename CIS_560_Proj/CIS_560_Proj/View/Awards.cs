@@ -20,7 +20,7 @@ namespace CIS_560_Proj
             InitializeComponent();
             this.listBox1.Items.Add("Indiviual Awards");
             this.listBox1.Items.Add("Movie Awards");
-            this.uxButtonInsertMovie.Enabled = true;
+          //  this.uxButtonInsertMovie.Enabled = true;
             this.uxSearchProduction.Enabled = true;
         }
 
@@ -50,18 +50,18 @@ namespace CIS_560_Proj
              Inrepo = new SqlIndividualAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
              "User id=phyo;" +
-            "Password=zinrocks@4321;");
+            "Password=zinrocks@432;");
 
             person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
              "User id=phyo;" +
-            "Password=zinrocks@4321;");
+            "Password=zinrocks@432;");
             //person.GetPerson()
 
             personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
                "Initial Catalog=phyo;" +
              "User id=phyo;" +
-            "Password=zinrocks@4321;");
+            "Password=zinrocks@432;");
 
             personrepo.RetrieveMoviePerson();
 
@@ -79,16 +79,7 @@ namespace CIS_560_Proj
             this.Dispose();
         }
 
-        private void Deleate_Click(object sender, EventArgs e)
-        {
-            oscarsrepo = new SqlOscarsRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@4321;");
-            var id = oscarsrepo.GetOscars(Convert.ToInt32(uxNumericUpDownYear.Value));
-            var createdPH = oscarsrepo.DeleateOscars(id.OscarsId, id.IndividualAwardsWonId, id.MovieAwardsWonId, id.Year);
-            dataGridView1.DataSource = oscarsrepo.RetrieveOscars();
-        }
+  
 
 
         private void uxSearchProduction_Click(object sender, EventArgs e)
@@ -97,20 +88,20 @@ namespace CIS_560_Proj
             personrepo = new SqlMoviePersonsRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                     "Password=zinrocks@432;");
             person = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                     "Password=zinrocks@432;");
 
             movieAwardsWon = new SqlMovieAwardsWonRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                     "Password=zinrocks@432;");
             movieCategory = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
                      "Initial Catalog=phyo;" +
                      "User id=phyo;" +
-                     "Password=zinrocks@4321;");
+                     "Password=zinrocks@432;");
 
             List<Movie> won = new List<Movie>();
             if (this.listBox2.SelectedItem.Equals("Best Picture"))

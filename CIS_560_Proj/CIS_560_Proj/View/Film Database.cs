@@ -11,7 +11,7 @@ namespace CIS_560_Proj
     public partial class Form1 : Form
     {
 
-        SqlConnection connection = new SqlConnection(@"Data Source=mssql.cs.ksu.edu;Initial Catalog=phyo;User ID=phyo;Password=***********");
+        SqlConnection connection = new SqlConnection(@"Data Source=mssql.cs.ksu.edu;Initial Catalog=phyo;User ID=username;Password=***********");
 
         public static List<string> items = new List<string>();
         public Form1()

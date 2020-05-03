@@ -67,7 +67,7 @@
             // 
             // People
             // 
-            this.People.BackColor = System.Drawing.SystemColors.Highlight;
+            this.People.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.People.Font = new System.Drawing.Font("Century Schoolbook", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.People.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.People.Location = new System.Drawing.Point(0, 242);
