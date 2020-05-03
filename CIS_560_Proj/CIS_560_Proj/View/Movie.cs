@@ -71,20 +71,20 @@ namespace CIS_560_Proj
 
         private void uxInsertButton_Click_1(object sender, EventArgs e)
         {
-            sales = new SqlSalesRepository("Data Source=mssql.cs.ksu.edu;" +
-                     "Initial Catalog=phyo;" +
-                     "User id=phyo;" +
-                     "Password=zinrocks@432;");
-            repo = new SqlProductionRepository("Data Source=mssql.cs.ksu.edu;" +
-              "Initial Catalog=phyo;" +
-              "User id=phyo;" +
-              "Password=zinrocks@432;");
+            sales = new SqlSalesRepository("Data Source = mssql.cs.ksu.edu; " +
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
+            repo = new SqlProductionRepository("Data Source = mssql.cs.ksu.edu; " +
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
 
          
-            movierepo = new SqlMovieRepository("Data Source=mssql.cs.ksu.edu;" +
-              "Initial Catalog=phyo;" +
-              "User id=phyo;" +
-              "Password=zinrocks@432;");
+            movierepo = new SqlMovieRepository("Data Source = mssql.cs.ksu.edu; " +
+                    "Initial Catalog=phyo;" +
+                    "User id=username;" +
+                    "Password=password;");
 
             try
             {

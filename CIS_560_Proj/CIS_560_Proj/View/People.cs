@@ -21,10 +21,10 @@ namespace CIS_560_Proj.GUI
         private void uxInsertButton_Click(object sender, EventArgs e)
         {
 
-            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+            repo = new SqlPersonRepository("Data Source = mssql.cs.ksu.edu; " +
                     "Initial Catalog=phyo;" +
-                    "User id=phyo;" +
-                    "Password=zinrocks@432;");
+                    "User id=username;" +
+                    "Password=password;");
 
             string name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
@@ -68,10 +68,10 @@ namespace CIS_560_Proj.GUI
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
 
-            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+            repo = new SqlPersonRepository("Data Source = mssql.cs.ksu.edu; " +
                     "Initial Catalog=phyo;" +
-                    "User id=phyo;" +
-                    "Password=zinrocks@432;");
+                    "User id=username;" +
+                    "Password=password;");
 
             var name = uxSearchBox.Text;
             //Retrieve person by name 
@@ -83,10 +83,10 @@ namespace CIS_560_Proj.GUI
         private void uxViewButton_Click(object sender, EventArgs e)
         {
 
-            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+            repo = new SqlPersonRepository("Data Source = mssql.cs.ksu.edu; " +
                     "Initial Catalog=phyo;" +
-                    "User id=phyo;" +
-                    "Password=zinrocks@432;");
+                    "User id=username;" +
+                    "Password=password;");
 
             dataGridView1.DataSource = repo.RetrievePersons();
 
@@ -107,10 +107,10 @@ namespace CIS_560_Proj.GUI
 
         private void uxDeleteButton_Click(object sender, EventArgs e)
         {
-            repo = new SqlPersonRepository("Data Source=mssql.cs.ksu.edu;" +
+            repo = new SqlPersonRepository("Data Source = mssql.cs.ksu.edu; " +
                     "Initial Catalog=phyo;" +
-                    "User id=phyo;" +
-                    "Password=zinrocks@432;");
+                    "User id=username;" +
+                    "Password=password;");
             var name = uxPersonName.Text;
             string DOB = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
 
